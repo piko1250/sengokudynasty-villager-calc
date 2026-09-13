@@ -1,4 +1,4 @@
-const CATEGORY_ORDER = ["食事", "暖かさ", "飲み物", "修繕", "健康", "安全性", "信仰", "贅沢", "素材"];
+const CATEGORY_ORDER = ["食事", "暖かさ", "飲み物", "修繕", "健康", "安全性", "信仰", "贅沢"];
 let currentCategory = "安全性";
 
 const categorySeg = document.getElementById('categorySeg');

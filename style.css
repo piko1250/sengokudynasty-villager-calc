@@ -57,6 +57,7 @@ h1{
 .status b{color:var(--indigo)}
 
 .lang-switch{display:flex;gap:6px;flex:none}
+.lang-switch[hidden]{display:none}
 .lang-switch button{
   font-family:monospace;
   font-size:.8rem;
@@ -292,12 +293,11 @@ input[type=range]{width:100%;accent-color:var(--indigo)}
   color:var(--ink-soft);
   display:flex;
   flex-wrap:wrap;
-  row-gap:4px;
+  gap:4px 10px;
   flex:1;
 }
 .params-line b{color:var(--indigo);font-weight:700;font-family:monospace;font-variant-numeric:tabular-nums}
 .param-chip{white-space:nowrap}
-.param-chip + .param-chip::before{content:"/";color:var(--paper-line);margin:0 8px}
 .edit-condition-btn{
   flex:none;
   font-family:sans-serif;
@@ -326,7 +326,7 @@ input[type=range]{width:100%;accent-color:var(--indigo)}
 }
 .fcard-head:hover{background:rgba(255,255,255,.06)}
 #resultsBody .fcard-head:first-child{border-top:none}
-.fcard-name{font-size:.85rem;color:var(--ink);display:flex;align-items:center}
+.fcard-name{font-size:.85rem;color:var(--ink);display:flex;align-items:center;flex:1;min-width:0;flex-wrap:wrap}
 .fcard-name .info-icon{user-select:none}
 .fcard-final{
   font-size:1.25rem;
@@ -357,8 +357,8 @@ input[type=range]{width:100%;accent-color:var(--indigo)}
 .formula-list{margin:0 0 0 1.4em;padding:0}
 .formula-list li{margin:2px 0}
 .glossary{margin:0;padding:0;list-style:none}
-.glossary li{display:flex;gap:10px;margin:2px 0}
-.glossary b{flex:none;min-width:6.5em}
+.glossary li{margin:6px 0}
+.glossary b{display:block}
 .notes .warn-dot::before{content:"⚠ ";color:var(--warn)}
 
 footer{
