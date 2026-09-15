@@ -177,6 +177,9 @@ function compute() {
     .map(([name, facility]) => computeFacility(`${currentCategory}::${name}`, facility.displayName || name, facility, level, tool, actionPct))
     .sort((a, b) => b.maxOutput - a.maxOutput);
 
+  const maxFinalChars = Math.max(...results.map(r => (r.output.toLocaleString() + ':').length));
+  body.style.setProperty('--final-w', `${maxFinalChars}ch`);
+
   results.forEach(r => {
     lastMaxCycles[r.overrideKey] = r.maxCycles;
     const row = document.createElement('div');
