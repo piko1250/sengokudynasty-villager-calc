@@ -28,7 +28,7 @@
 
   <section id="viewOutput">
     <h2 class="block-title">カテゴリ</h2>
-    <p class="subtitle" style="margin:0 0 8px">現在「安全性」のみ選択可能です</p>
+    <p class="subtitle" style="margin:0 0 8px">現在「安全性」「信仰」「健康」「飲み物」「贅沢」のみ選択可能です</p>
     <div class="seg" id="categorySeg" style="margin-bottom:16px"></div>
 
     <h2 class="block-title">条件</h2>
@@ -38,21 +38,13 @@
     </div>
 
     <div class="condition-panel" id="conditionPanel">
-      <p class="subtitle" style="margin:0 0 12px">ここで変更した条件はすぐに生産量へ反映されます。既定値はLv100・パーク3pt・道具生産調整2.5・専門ボーナスあり・作業量100%です</p>
+      <p class="subtitle" style="margin:0 0 12px">ここで変更した条件はすぐに生産量へ反映されます。既定値はLv100・パーク3pt・道具生産調整2.5・専門ボーナスありです</p>
 
       <div class="field">
         <label for="level">村人レベル<span class="info-icon" tabindex="0" data-tip="0〜100の範囲で設定します。スライダーのドラッグ、または数値欄への直接入力で調整できます">i</span></label>
         <div class="range-row">
           <input type="range" id="level" min="0" max="100" value="100">
           <input type="number" id="levelNum" min="0" max="100" value="100" inputmode="numeric">
-        </div>
-      </div>
-
-      <div class="field">
-        <label for="action">作業量（%）<span class="info-icon" tabindex="0" data-tip="村人がその日に働こうとする目標値です（通常100%）。生産回数は端数切り捨てになるため、実際の作業量は目標よりわずかに低くなります">i</span></label>
-        <div class="range-row">
-          <input type="range" id="action" min="0" max="100" value="100">
-          <input type="number" id="actionNum" min="0" max="100" value="100" inputmode="numeric">
         </div>
       </div>
 
@@ -67,7 +59,7 @@
       </div>
 
       <div class="field" id="toolField">
-        <label for="tool">道具生産調整<span class="info-icon" tabindex="0" data-tip="使用する道具の性能による合計生産量の倍率です">i</span></label>
+        <label for="tool">道具生産調整<span class="info-icon" tabindex="0" data-tip="道具が合計生産量に与える倍率。道具を使用しないレシピでは常に1として計算します">i</span></label>
         <input type="number" id="tool" class="compact-num" min="0" step="0.1" value="2.5" inputmode="decimal">
       </div>
 
@@ -82,10 +74,11 @@
     </div>
 
     <h2 class="block-title">結果</h2>
-    <p class="subtitle" style="margin:-4px 0 8px;font-size:.8rem">一日の生産量: 施設名 / レシピ（一日の生産量の多い順に表示）</p>
+    <p class="subtitle" style="margin:-4px 0 8px;font-size:.8rem">一日の生産量(降順): 施設名 / レシピ 生産:現在/最大 作業量</p>
     <section aria-label="計算結果">
       <div id="resultsBody"></div>
     </section>
+    <p class="subtitle2" style="margin:0 4px;font-size:.76rem;text-align:right">各行の生産(回数)は行頭の-/+で増減、またはクリックで直接入力ができます</p>
     <p class="subtitle2" style="margin:0 4px;font-size:.76rem;text-align:right">施設名の横の <span class="info-icon" style="cursor:default">i</span> で詳細を確認できます</p>
   </section>
 
@@ -96,7 +89,8 @@
       <li><b>生産</b>作業量をレシピの作業量コストで割った回数。1日の間に村人が作業を行うことができる回数</li>
       <li><b>合計生産量</b>生産に専門ボーナス・道具生産調整を反映した値</li>
       <li><b>施設倍率</b>施設ごとに決まっている固定の倍率</li>
-      <li><b>一日の生産量</b>合計生産量に施設倍率を掛けた、本ツールの最終出力値</li>
+      <li><b>村人の要求</b>生産物1個が満たす要求の量。生産物自体が要求そのもの（警備員や神職など）の場合は1</li>
+      <li><b>一日の生産量</b>合計生産量に施設倍率・村人の要求を掛けた、本ツールの最終出力値</li>
     </ul>
   </div>
 
@@ -110,7 +104,7 @@
   </div>
 
   <footer>
-    <p>Sengoku Dynasty - Version: 1.2.3.0/2026.09.13<span style="white-space:nowrap">（個人調べ）</span></p>
+    <p>Sengoku Dynasty - Version: 1.2.3.0/2026.09.15<span style="white-space:nowrap">（個人調べ）</span></p>
   </footer>
 </div>
 

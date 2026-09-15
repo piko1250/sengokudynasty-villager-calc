@@ -88,7 +88,7 @@ h1{
 .field{
   display:grid;
   grid-template-columns:118px 1fr;
-  align-items:center;
+  align-items:start;
   gap:12px;
   padding:7px 0;
   border-top:1px solid var(--paper-line);
@@ -310,15 +310,16 @@ input[type=range]{width:100%;accent-color:var(--indigo)}
   border-radius:3px;
   cursor:pointer;
   white-space:nowrap;
+  min-width:108px;
+  text-align:center;
 }
 .edit-condition-btn:hover{background:var(--btn-deep)}
 
 .fcard-head{
-  display:flex;
-  flex-wrap:wrap;
-  justify-content:flex-start;
-  align-items:baseline;
-  gap:4px 10px;
+  display:grid;
+  grid-template-columns:auto auto 1fr;
+  align-items:center;
+  gap:4px 8px;
   padding:8px 10px;
   margin:0 -10px;
   border-top:1px dashed var(--paper-line);
@@ -326,8 +327,49 @@ input[type=range]{width:100%;accent-color:var(--indigo)}
 }
 .fcard-head:hover{background:rgba(255,255,255,.06)}
 #resultsBody .fcard-head:first-child{border-top:none}
-.fcard-name{font-size:.85rem;color:var(--ink);display:flex;align-items:center;flex:1;min-width:0;flex-wrap:wrap}
+.fcard-name{font-size:.85rem;color:var(--ink);display:flex;align-items:baseline;min-width:0;flex-wrap:wrap}
 .fcard-name .info-icon{user-select:none}
+.cycle-stepper{display:inline-flex;align-items:center;gap:4px;font-family:monospace;font-variant-numeric:tabular-nums}
+.cycle-btn{
+  flex:none;
+  width:20px;height:20px;
+  line-height:1;
+  border:1px solid var(--paper-line);
+  background:var(--paper);
+  color:var(--ink-soft);
+  border-radius:3px;
+  cursor:pointer;
+  font-size:.75rem;
+  padding:0;
+  user-select:none;
+}
+.cycle-btn:hover:not(:disabled){background:rgba(255,255,255,.1);color:var(--ink)}
+.cycle-btn:disabled{opacity:.3;cursor:not-allowed}
+.fcard-meta{
+  margin-left:8px;
+  font-size:.72rem;
+  color:var(--ink-soft);
+  font-family:monospace;
+  font-variant-numeric:tabular-nums;
+  white-space:nowrap;
+  cursor:text;
+  padding:4px 3px;
+  margin:-4px -3px 0 5px;
+  border-radius:3px;
+}
+.fcard-meta:hover{background:rgba(255,255,255,.1)}
+.fcard-meta-adjusted{color:var(--indigo)}
+input.cycle-num-input{
+  width:4.2em;
+  font-family:monospace;
+  font-variant-numeric:tabular-nums;
+  font-size:.95rem;
+  color:var(--ink);
+  background:#000;
+  border:1px solid var(--indigo);
+  border-radius:3px;
+  padding:2px 4px;
+}
 .fcard-final{
   font-size:1.25rem;
   font-weight:700;
@@ -336,6 +378,7 @@ input[type=range]{width:100%;accent-color:var(--indigo)}
   padding:4px 8px;
   margin:-4px -8px;
   cursor:text;
+  text-align:right;
 }
 #resultsBody{
   display:flex;
