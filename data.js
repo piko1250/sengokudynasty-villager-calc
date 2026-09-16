@@ -300,7 +300,20 @@ const MODEL = {
         "酒場の調理場(調理した肉)": { displayName: "酒場の調理場", recipe: "調理した肉_酒場の調理場", recipeLabel: "調理した肉", facility_multiplier: 1, item_value: 11, tools: "no" },
         "台所の調理場(調理した肉)": { displayName: "台所の調理場", recipe: "調理した肉_台所の調理場", recipeLabel: "調理した肉", facility_multiplier: 1, item_value: 11, tools: "no" },
         "囲炉裏と調理鍋の仕事場(調理した肉)": { displayName: "囲炉裏と調理鍋の仕事場", recipe: "調理した肉_囲炉裏と調理鍋の仕事場", recipeLabel: "調理した肉", facility_multiplier: 1, item_value: 11, tools: "no" },
-        "囲炉裏の仕事場(調理した肉)": { displayName: "囲炉裏の仕事場", recipe: "調理した肉_囲炉裏の仕事場", recipeLabel: "調理した肉", facility_multiplier: 1, item_value: 11, tools: "no" }
+        "囲炉裏の仕事場(調理した肉)": { displayName: "囲炉裏の仕事場", recipe: "調理した肉_囲炉裏の仕事場", recipeLabel: "調理した肉", facility_multiplier: 1, item_value: 11, tools: "no" },
+        "採集者の仕事場(柚子の果実)": { displayName: "採集者の仕事場", recipe: "柚子の果実_採集者の仕事場", recipeLabel: "柚子の果実", facility_multiplier: 1, item_value: 4, tools: "no" },
+        "採集者の仕事場(ゴボウ)": { displayName: "採集者の仕事場", recipe: "ゴボウ_採集者の仕事場", recipeLabel: "ゴボウ", facility_multiplier: 1, item_value: 2, tools: "no" },
+        "採集者の仕事場(えのき)": { displayName: "採集者の仕事場", recipe: "えのき_採集者の仕事場", recipeLabel: "えのき", facility_multiplier: 1, item_value: 4, tools: "no" },
+        "採集者の仕事場(舞茸)": { displayName: "採集者の仕事場", recipe: "舞茸_採集者の仕事場", recipeLabel: "舞茸", facility_multiplier: 1, item_value: 4, tools: "no" },
+        "採集者の仕事場(松茸)": { displayName: "採集者の仕事場", recipe: "松茸_採集者の仕事場", recipeLabel: "松茸", facility_multiplier: 1, item_value: 4, tools: "no" },
+        "採集者の仕事場(しいたけ)": { displayName: "採集者の仕事場", recipe: "しいたけ_採集者の仕事場", recipeLabel: "しいたけ", facility_multiplier: 1, item_value: 4, tools: "no" },
+        "採集者の仕事場(ヒョウタンノキの実)": { displayName: "採集者の仕事場", recipe: "ヒョウタンノキの実_採集者の仕事場", recipeLabel: "ヒョウタンノキの実", facility_multiplier: 1, item_value: 4, tools: "no" },
+        "採集者の仕事場(わさび)": { displayName: "採集者の仕事場", recipe: "わさび_採集者の仕事場", recipeLabel: "わさび", facility_multiplier: 1, item_value: 1, tools: "no" },
+        "採集者の仕事場(ニンニク)": { displayName: "採集者の仕事場", recipe: "ニンニク_採集者の仕事場", recipeLabel: "ニンニク", facility_multiplier: 1, item_value: 1, tools: "no" },
+        "採集者の仕事場(三つ葉)": { displayName: "採集者の仕事場", recipe: "三つ葉_採集者の仕事場", recipeLabel: "三つ葉", facility_multiplier: 1, item_value: 2, tools: "no" },
+        "採集者の仕事場(木苺)": { displayName: "採集者の仕事場", recipe: "木苺_採集者の仕事場", recipeLabel: "木苺", facility_multiplier: 1, item_value: 2, tools: "no" },
+        "採集者の仕事場(コケモモ)": { displayName: "採集者の仕事場", recipe: "コケモモ_採集者の仕事場", recipeLabel: "コケモモ", facility_multiplier: 1, item_value: 2, tools: "no" },
+        "採集者の仕事場(プラム)": { displayName: "採集者の仕事場", recipe: "プラム_採集者の仕事場", recipeLabel: "プラム", facility_multiplier: 1, item_value: 3, tools: "no" }
       }
     },
     "安全性": {
@@ -323,20 +336,7 @@ const MODEL = {
         "搾油(油)": { displayName: "搾油", recipe: "油_搾油", recipeLabel: "油", facility_multiplier: 1, item_value: 45, tools: "no" },
         "採集者の仕事場(枝)": { displayName: "採集者の仕事場", recipe: "枝_採集者の仕事場", recipeLabel: "枝", facility_multiplier: 1, item_value: 1, tools: "no" },
         "採集者の仕事場(樹皮)": { displayName: "採集者の仕事場", recipe: "樹皮_採集者の仕事場", recipeLabel: "樹皮", facility_multiplier: 1, item_value: 1, tools: "no" },
-        "採集者の仕事場(梶の樹皮)": { displayName: "採集者の仕事場", recipe: "梶の樹皮_採集者の仕事場", recipeLabel: "梶の樹皮", facility_multiplier: 1, item_value: 1, tools: "no" },
-        "採集者の仕事場(柚子の果実)": { displayName: "採集者の仕事場", recipe: "柚子の果実_採集者の仕事場", recipeLabel: "柚子の果実", facility_multiplier: 1, item_value: 4, tools: "no" },
-        "採集者の仕事場(ゴボウ)": { displayName: "採集者の仕事場", recipe: "ゴボウ_採集者の仕事場", recipeLabel: "ゴボウ", facility_multiplier: 1, item_value: 2, tools: "no" },
-        "採集者の仕事場(えのき)": { displayName: "採集者の仕事場", recipe: "えのき_採集者の仕事場", recipeLabel: "えのき", facility_multiplier: 1, item_value: 4, tools: "no" },
-        "採集者の仕事場(舞茸)": { displayName: "採集者の仕事場", recipe: "舞茸_採集者の仕事場", recipeLabel: "舞茸", facility_multiplier: 1, item_value: 4, tools: "no" },
-        "採集者の仕事場(松茸)": { displayName: "採集者の仕事場", recipe: "松茸_採集者の仕事場", recipeLabel: "松茸", facility_multiplier: 1, item_value: 4, tools: "no" },
-        "採集者の仕事場(しいたけ)": { displayName: "採集者の仕事場", recipe: "しいたけ_採集者の仕事場", recipeLabel: "しいたけ", facility_multiplier: 1, item_value: 4, tools: "no" },
-        "採集者の仕事場(ヒョウタンノキの実)": { displayName: "採集者の仕事場", recipe: "ヒョウタンノキの実_採集者の仕事場", recipeLabel: "ヒョウタンノキの実", facility_multiplier: 1, item_value: 4, tools: "no" },
-        "採集者の仕事場(わさび)": { displayName: "採集者の仕事場", recipe: "わさび_採集者の仕事場", recipeLabel: "わさび", facility_multiplier: 1, item_value: 1, tools: "no" },
-        "採集者の仕事場(ニンニク)": { displayName: "採集者の仕事場", recipe: "ニンニク_採集者の仕事場", recipeLabel: "ニンニク", facility_multiplier: 1, item_value: 1, tools: "no" },
-        "採集者の仕事場(三つ葉)": { displayName: "採集者の仕事場", recipe: "三つ葉_採集者の仕事場", recipeLabel: "三つ葉", facility_multiplier: 1, item_value: 2, tools: "no" },
-        "採集者の仕事場(木苺)": { displayName: "採集者の仕事場", recipe: "木苺_採集者の仕事場", recipeLabel: "木苺", facility_multiplier: 1, item_value: 2, tools: "no" },
-        "採集者の仕事場(コケモモ)": { displayName: "採集者の仕事場", recipe: "コケモモ_採集者の仕事場", recipeLabel: "コケモモ", facility_multiplier: 1, item_value: 2, tools: "no" },
-        "採集者の仕事場(プラム)": { displayName: "採集者の仕事場", recipe: "プラム_採集者の仕事場", recipeLabel: "プラム", facility_multiplier: 1, item_value: 3, tools: "no" }
+        "採集者の仕事場(梶の樹皮)": { displayName: "採集者の仕事場", recipe: "梶の樹皮_採集者の仕事場", recipeLabel: "梶の樹皮", facility_multiplier: 1, item_value: 1, tools: "no" }
       }
     },
     "信仰": {
