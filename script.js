@@ -1,5 +1,5 @@
 const CATEGORY_ORDER = ["食事", "暖かさ", "飲み物", "修繕", "健康", "安全性", "信仰", "贅沢"];
-let currentCategory = "安全性";
+let currentCategory = CATEGORY_ORDER.find(name => !!MODEL.categories[name]);
 
 const categorySeg = document.getElementById('categorySeg');
 CATEGORY_ORDER.forEach(name => {
@@ -126,14 +126,15 @@ function computeFacility(overrideKey, facilityName, facility, level, tool, actio
   const cap = 100;
   const targetBudget = (actionPct / 100) * cap;
   const perkMult = MODEL.global_constants.perk_multipliers[perkPoints];
-  const cost0 = recipe.base_cost0_percent / perkMult;
+  const cost0 = (recipe.base_cost0_num / recipe.base_cost0_den) / perkMult;
   const cost = cost0 / (1 + level / MODEL.global_constants.level_formula_divisor);
 
   const targetI = toScaledBigInt(targetBudget);
-  const cost0PercentI = toScaledBigInt(recipe.base_cost0_percent);
   const perkMultI = toScaledBigInt(perkMult);
   const levelFactor = BigInt(50 + level);
-  const maxCyclesI = floorDiv(targetI * perkMultI * levelFactor, cost0PercentI * 50n * RATIO_SCALE);
+  const cost0NumI = BigInt(recipe.base_cost0_num);
+  const cost0DenI = BigInt(recipe.base_cost0_den);
+  const maxCyclesI = floorDiv(targetI * perkMultI * levelFactor * cost0DenI, cost0NumI * 50n * RATIO_SCALE * RATIO_SCALE);
   const maxCycles = Number(maxCyclesI);
 
   const override = cycleOverrides[overrideKey];
@@ -161,12 +162,9 @@ function compute() {
   const level = Number(levelInput.value);
   const actionPct = 100;
   const category = MODEL.categories[currentCategory];
-  const tool = category.usesTool ? Math.max(0, Number(toolInput.value) || 0) : 1;
+  const tool = Math.max(0, Number(toolInput.value) || 0);
 
-  document.getElementById('toolField').hidden = !category.usesTool;
-
-  const paramParts = [`村人Lv: <b>${level}</b>`, `パーク: <b>${perkPoints}pt</b>`];
-  if (category.usesTool) paramParts.push(`道具生産調整: <b>${tool}</b>`);
+  const paramParts = [`村人Lv: <b>${level}</b>`, `パーク: <b>${perkPoints}pt</b>`, `道具生産調整: <b>${tool}</b>`];
   paramParts.push(`専門ボーナス: <b>${skillMatchInput.checked ? '○' : '×'}</b>`);
   document.getElementById('paramsOut').innerHTML = paramParts.map(p => `<span class="param-chip">${p}</span>`).join('');
 
@@ -186,8 +184,8 @@ function compute() {
     row.className = 'fcard-head';
     const breakdown = [
       `レシピの作業量コスト: ${r.cost.toFixed(1)}% ※実測データからの予測値`,
-      `生産(現在/最大): ${r.cycles}/${r.maxCycles} ※${r.targetBudget.toFixed(0)}% ÷ ${r.cost.toFixed(1)}%(表示上、端数を省略しています)`,
       `現在の作業量: ${r.actualBudget.toFixed(1)}% ※${r.cycles} x ${r.cost.toFixed(1)}%(表示上、端数を省略しています)`,
+      `生産(現在/最大): ${r.cycles}/${r.maxCycles} ※${r.targetBudget.toFixed(0)}% ÷ ${r.cost.toFixed(1)}%(表示上、端数を省略しています)`,
       `道具生産調整: x${r.tool}${r.facility.tools === "no" ? " ※この施設は道具を使用しません" : ""}`,
       `専門ボーナス: x${r.mult}`,
       `結果: (${r.cycles} x ${r.mult} x ${r.tool})(小数点以下切り捨て) x 施設倍率(${r.facility.facility_multiplier}) x 村人の要求(${r.itemValue}) = ${r.output.toLocaleString()}`
