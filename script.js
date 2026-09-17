@@ -1,4 +1,5 @@
 const CATEGORY_ORDER = ["食事", "暖かさ", "飲み物", "修繕", "健康", "安全性", "信仰", "贅沢"];
+function fmtTool(x) { return Number.isInteger(x) ? x.toFixed(1) : String(x); }
 let currentCategory = CATEGORY_ORDER.find(name => !!MODEL.categories[name]);
 
 const categorySeg = document.getElementById('categorySeg');
@@ -36,7 +37,7 @@ function openDetail(icon) {
   if (!detail) {
     detail = document.createElement('div');
     detail.className = 'inline-detail';
-    detail.textContent = icon.dataset.tip;
+    detail.innerHTML = icon.dataset.tip;
     icon._detailEl = detail;
     detail._iconEl = icon;
     const host = icon.closest('.field') || icon.closest('.fcard-head');
@@ -124,7 +125,9 @@ const lastMaxCycles = {};
 function computeFacility(overrideKey, facilityName, facility, level, tool, actionPct) {
   const recipe = MODEL.recipes[facility.recipe];
   const skillMatch = skillMatchInput.checked;
-  const effectiveTool = facility.tools === "no" ? 1 : tool;
+  const toolLimit = MODEL.global_constants.required_tool_limit[facility.tools];
+  const effectiveTool = facility.tools === "no" ? 1 : (toolLimit != null ? Math.min(tool, toolLimit) : tool);
+  const toolCapped = toolLimit != null && tool > toolLimit;
 
   const cap = 100;
   const targetBudget = (actionPct / 100) * cap;
@@ -158,7 +161,7 @@ function computeFacility(overrideKey, facilityName, facility, level, tool, actio
   const maxUnitsI = floorDiv(maxCyclesI * multNumI * toolI, multDenI * RATIO_SCALE);
   const maxOutput = Number(maxUnitsI) * facility.facility_multiplier * itemValue;
 
-  return { overrideKey, facilityName, facility, recipeLabel: facility.recipeLabel, cost, targetBudget, actualBudget, cycles, maxCycles, skillMatch, mult, tool: effectiveTool, units, itemValue, output, maxOutput };
+  return { overrideKey, facilityName, facility, recipeLabel: facility.recipeLabel, cost, targetBudget, actualBudget, cycles, maxCycles, skillMatch, mult, tool: effectiveTool, toolCapped, units, itemValue, output, maxOutput };
 }
 
 function compute() {
@@ -167,7 +170,7 @@ function compute() {
   const category = MODEL.categories[currentCategory];
   const tool = Math.max(0, Number(toolInput.value) || 0);
 
-  const paramParts = [`村人Lv: <b>${level}</b>`, `パーク: <b>${perkPoints}pt</b>`, `道具生産調整: <b>${tool}</b>`];
+  const paramParts = [`村人Lv: <b>${level}</b>`, `パーク: <b>${perkPoints}pt</b>`, `道具生産調整: <b>${fmtTool(tool)}</b>`];
   paramParts.push(`専門ボーナス: <b>${skillMatchInput.checked ? '○' : '×'}</b>`);
   document.getElementById('paramsOut').innerHTML = paramParts.map(p => `<span class="param-chip">${p}</span>`).join('');
 
@@ -189,9 +192,9 @@ function compute() {
       `レシピの作業量コスト: ${r.cost.toFixed(1)}% ※実測データからの予測値`,
       `現在の作業量: ${r.actualBudget.toFixed(1)}% ※${r.cycles} x ${r.cost.toFixed(1)}%(表示上、端数を省略しています)`,
       `生産(現在/最大): ${r.cycles}/${r.maxCycles} ※${r.targetBudget.toFixed(0)}% ÷ ${r.cost.toFixed(1)}%(表示上、端数を省略しています)`,
-      `道具生産調整: x${r.tool}${r.facility.tools === "no" ? " ※この施設は道具を使用しません" : ""}`,
+      `道具生産調整: ${r.toolCapped ? `<b class="tool-capped">x${fmtTool(r.tool)}</b>` : `x${fmtTool(r.tool)}`}${r.facility.tools === "no" ? " ※このレシピは道具を使用しません" : (r.toolCapped ? ` ※このレシピで設定可能な最大値${fmtTool(r.tool)}を適用します` : "")}`,
       `専門ボーナス: x${r.mult}`,
-      `結果: (${r.cycles} x ${r.mult} x ${r.tool})(小数点以下切り捨て) x 施設倍率(${r.facility.facility_multiplier}) x 村人の要求(${r.itemValue}) = ${r.output.toLocaleString()}`
+      `結果: (${r.cycles} x ${r.mult} x ${fmtTool(r.tool)})(小数点以下切り捨て) x 施設倍率(${r.facility.facility_multiplier}) x 村人の要求(${r.itemValue}) = ${r.output.toLocaleString()}`
     ].join('\n');
     const minusDisabled = r.cycles <= 0 ? 'disabled' : '';
     const plusDisabled = r.cycles >= r.maxCycles ? 'disabled' : '';

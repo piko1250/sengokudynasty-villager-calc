@@ -3,7 +3,8 @@ const MODEL = {
     skill_match_multiplier: 1.25,
     skill_mismatch_multiplier: 1.0,
     level_formula_divisor: 50,
-    perk_multipliers: { 0: 1.0, 1: 1.05, 2: 1.1, 3: 1.15 }
+    perk_multipliers: { 0: 1.0, 1: 1.05, 2: 1.1, 3: 1.15 },
+    required_tool_limit: { "槌全般": 2.0, "小刀全般": 1.75, "近接武器": 3.0, "遠距離武器": 2.5, "彫刻刀": 1.0, "桶": 1.0, "漁網": 1.0, "釣り竿類": 1.5, "武器全般": 3.0, "つるはし全般": 1.75, "釿全般": 1.75, "斧全般": 1.75 }
   },
   recipes: {
     "衛兵_近接武器": { base_cost0_num: 10, base_cost0_den: 1 },
@@ -200,6 +201,19 @@ const MODEL = {
     "蜂蜜_大きな蜜蜂の巣箱": { base_cost0_num: 13, base_cost0_den: 20 },
     "藁_草の乾燥棚": { base_cost0_num: 2, base_cost0_den: 5 },
     "藁_ヤシの葉の乾燥棚": { base_cost0_num: 1, base_cost0_den: 1 },
+    "彫刻した石_石工所": { base_cost0_num: 3, base_cost0_den: 1 },
+    "天照大御神の像_石工所": { base_cost0_num: 10, base_cost0_den: 1 },
+    "粘土_鉱夫の仕事場": { base_cost0_num: 4, base_cost0_den: 1 },
+    "薪_大工作業台": { base_cost0_num: 3, base_cost0_den: 1 },
+    "板(針葉樹)_大工作業台": { base_cost0_num: 3, base_cost0_den: 1 },
+    "板(落葉樹)_大工作業台": { base_cost0_num: 3, base_cost0_den: 1 },
+    "板(上質な針葉樹)_大工作業台": { base_cost0_num: 7, base_cost0_den: 2 },
+    "板(上質な落葉樹)_大工作業台": { base_cost0_num: 7, base_cost0_den: 2 },
+    "板(果樹)_大工作業台": { base_cost0_num: 4, base_cost0_den: 1 },
+    "日本酒_圧力ろ過器": { base_cost0_num: 2, base_cost0_den: 1 },
+    "焼酎_焼酎蒸留所": { base_cost0_num: 2, base_cost0_den: 1 },
+    "ヒョウタンノキの水容器_仕立て台": { base_cost0_num: 15, base_cost0_den: 2 },
+    "蓑_仕立て台": { base_cost0_num: 20, base_cost0_den: 1 },
     "木炭_炭窯": { base_cost0_num: 6, base_cost0_den: 5 },
     "小さな銅鑼_金敷": { base_cost0_num: 15, base_cost0_den: 2 },
     "鈴_金敷": { base_cost0_num: 6, base_cost0_den: 1 },
@@ -229,12 +243,12 @@ const MODEL = {
         "囲炉裏の仕事場(干し果実)": { displayName: "囲炉裏の仕事場", recipe: "干し果実_囲炉裏の仕事場", recipeLabel: "干し果実", facility_multiplier: 1, item_value: 7, tools: "no" },
         "酒場の調理場(蜂蜜漬け果実)": { displayName: "酒場の調理場", recipe: "蜂蜜漬け果実_酒場の調理場", recipeLabel: "蜂蜜漬け果実", facility_multiplier: 1, item_value: 20, tools: "no" },
         "台所の調理場(蜂蜜漬け果実)": { displayName: "台所の調理場", recipe: "蜂蜜漬け果実_台所の調理場", recipeLabel: "蜂蜜漬け果実", facility_multiplier: 1, item_value: 20, tools: "no" },
-        "猟師の仕事場(生肉)": { displayName: "猟師の仕事場", recipe: "生肉_猟師の仕事場", recipeLabel: "生肉", facility_multiplier: 1, item_value: 5, tools: "" },
-        "猟師の仕事場(脂肪)": { displayName: "猟師の仕事場", recipe: "脂肪_猟師の仕事場", recipeLabel: "脂肪", facility_multiplier: 1, item_value: 5, tools: "" },
-        "漁師の仕事場(魚)": { displayName: "漁師の仕事場", recipe: "魚_漁師の仕事場", recipeLabel: "魚", facility_multiplier: 1, item_value: 4, tools: "" },
-        "基本の釣り場(魚)": { displayName: "基本の釣り場", recipe: "魚_基本の釣り場", recipeLabel: "魚", facility_multiplier: 1, item_value: 4, tools: "" },
-        "匠の釣り場(魚)": { displayName: "匠の釣り場", recipe: "魚_匠の釣り場", recipeLabel: "魚", facility_multiplier: 1, item_value: 4, tools: "" },
-        "高度な釣り場(魚)": { displayName: "高度な釣り場", recipe: "魚_高度な釣り場", recipeLabel: "魚", facility_multiplier: 1, item_value: 4, tools: "" },
+        "猟師の仕事場(生肉)": { displayName: "猟師の仕事場", recipe: "生肉_猟師の仕事場", recipeLabel: "生肉", facility_multiplier: 1, item_value: 5, tools: "小刀全般" },
+        "猟師の仕事場(脂肪)": { displayName: "猟師の仕事場", recipe: "脂肪_猟師の仕事場", recipeLabel: "脂肪", facility_multiplier: 1, item_value: 5, tools: "小刀全般" },
+        "漁師の仕事場(魚)": { displayName: "漁師の仕事場", recipe: "魚_漁師の仕事場", recipeLabel: "魚", facility_multiplier: 1, item_value: 4, tools: "漁網" },
+        "基本の釣り場(魚)": { displayName: "基本の釣り場", recipe: "魚_基本の釣り場", recipeLabel: "魚", facility_multiplier: 1, item_value: 4, tools: "釣り竿類" },
+        "匠の釣り場(魚)": { displayName: "匠の釣り場", recipe: "魚_匠の釣り場", recipeLabel: "魚", facility_multiplier: 1, item_value: 4, tools: "釣り竿類" },
+        "高度な釣り場(魚)": { displayName: "高度な釣り場", recipe: "魚_高度な釣り場", recipeLabel: "魚", facility_multiplier: 1, item_value: 4, tools: "釣り竿類" },
         "酒場の調理場(調理した卵)": { displayName: "酒場の調理場", recipe: "調理した卵_酒場の調理場", recipeLabel: "調理した卵", facility_multiplier: 1, item_value: 6, tools: "no" },
         "台所の調理場(調理した卵)": { displayName: "台所の調理場", recipe: "調理した卵_台所の調理場", recipeLabel: "調理した卵", facility_multiplier: 1, item_value: 6, tools: "no" },
         "囲炉裏と調理鍋の仕事場(調理した卵)": { displayName: "囲炉裏と調理鍋の仕事場", recipe: "調理した卵_囲炉裏と調理鍋の仕事場", recipeLabel: "調理した卵", facility_multiplier: 1, item_value: 6, tools: "no" },
@@ -350,13 +364,13 @@ const MODEL = {
     },
     "安全性": {
       facilities: {
-        "地侍のやぐら(近接)": { displayName: "地侍のやぐら", recipe: "衛兵_近接武器", recipeLabel: "近接武器", facility_multiplier: 50, item_value: 1, tools: "" },
-        "地侍のやぐら(遠距離)": { displayName: "地侍のやぐら", recipe: "衛兵_遠距離武器", recipeLabel: "遠距離武器", facility_multiplier: 50, item_value: 1, tools: "" },
-        "小さなやぐら(近接)": { displayName: "小さなやぐら", recipe: "衛兵_近接武器", recipeLabel: "近接武器", facility_multiplier: 30, item_value: 1, tools: "" },
-        "小さなやぐら(遠距離)": { displayName: "小さなやぐら", recipe: "衛兵_遠距離武器", recipeLabel: "遠距離武器", facility_multiplier: 30, item_value: 1, tools: "" },
-        "猟師の小さなやぐら(近接)": { displayName: "猟師の小さなやぐら", recipe: "衛兵_近接武器", recipeLabel: "近接武器", facility_multiplier: 40, item_value: 1, tools: "" },
-        "猟師の小さなやぐら(遠距離)": { displayName: "猟師の小さなやぐら", recipe: "衛兵_遠距離武器", recipeLabel: "遠距離武器", facility_multiplier: 40, item_value: 1, tools: "" },
-        "特殊建造物「物見やぐら」": { recipe: "物見やぐら_専用", recipeLabel: "衛兵", facility_multiplier: 1, item_value: 1, tools: "" },
+        "地侍のやぐら(近接)": { displayName: "地侍のやぐら", recipe: "衛兵_近接武器", recipeLabel: "近接武器", facility_multiplier: 50, item_value: 1, tools: "近接武器" },
+        "地侍のやぐら(遠距離)": { displayName: "地侍のやぐら", recipe: "衛兵_遠距離武器", recipeLabel: "遠距離武器", facility_multiplier: 50, item_value: 1, tools: "遠距離武器" },
+        "小さなやぐら(近接)": { displayName: "小さなやぐら", recipe: "衛兵_近接武器", recipeLabel: "近接武器", facility_multiplier: 30, item_value: 1, tools: "近接武器" },
+        "小さなやぐら(遠距離)": { displayName: "小さなやぐら", recipe: "衛兵_遠距離武器", recipeLabel: "遠距離武器", facility_multiplier: 30, item_value: 1, tools: "遠距離武器" },
+        "猟師の小さなやぐら(近接)": { displayName: "猟師の小さなやぐら", recipe: "衛兵_近接武器", recipeLabel: "近接武器", facility_multiplier: 40, item_value: 1, tools: "近接武器" },
+        "猟師の小さなやぐら(遠距離)": { displayName: "猟師の小さなやぐら", recipe: "衛兵_遠距離武器", recipeLabel: "遠距離武器", facility_multiplier: 40, item_value: 1, tools: "遠距離武器" },
+        "特殊建造物「物見やぐら」": { recipe: "物見やぐら_専用", recipeLabel: "衛兵", facility_multiplier: 1, item_value: 1, tools: "武器全般" },
         "特殊建造物「灯台」": { recipe: "灯籠夫_灯台", recipeLabel: "灯籠夫", facility_multiplier: 20, item_value: 1, tools: "no" }
       }
     },
@@ -369,7 +383,9 @@ const MODEL = {
         "採集者の仕事場(枝)": { displayName: "採集者の仕事場", recipe: "枝_採集者の仕事場", recipeLabel: "枝", facility_multiplier: 1, item_value: 1, tools: "no" },
         "採集者の仕事場(樹皮)": { displayName: "採集者の仕事場", recipe: "樹皮_採集者の仕事場", recipeLabel: "樹皮", facility_multiplier: 1, item_value: 1, tools: "no" },
         "採集者の仕事場(梶の樹皮)": { displayName: "採集者の仕事場", recipe: "梶の樹皮_採集者の仕事場", recipeLabel: "梶の樹皮", facility_multiplier: 1, item_value: 1, tools: "no" },
-        "炭窯": { recipe: "木炭_炭窯", recipeLabel: "木炭", facility_multiplier: 2, item_value: 12, tools: "no" }
+        "炭窯": { recipe: "木炭_炭窯", recipeLabel: "木炭", facility_multiplier: 2, item_value: 12, tools: "no" },
+        "大工作業台(薪)": { displayName: "大工作業台", recipe: "薪_大工作業台", recipeLabel: "薪", facility_multiplier: 8, item_value: 5, tools: "斧全般" },
+        "仕立て台(蓑)": { displayName: "仕立て台", recipe: "蓑_仕立て台", recipeLabel: "蓑", facility_multiplier: 1, item_value: 140, tools: "no" }
       }
     },
     "信仰": {
@@ -400,10 +416,11 @@ const MODEL = {
         "小さな八幡神社": { recipe: "神主_小社", recipeLabel: "神主", facility_multiplier: 50, item_value: 1, tools: "no" },
         "八幡神社": { recipe: "神主_中社", recipeLabel: "神主", facility_multiplier: 50, item_value: 1, tools: "no" },
         "大きな八幡神社": { recipe: "神主_大社", recipeLabel: "神主", facility_multiplier: 50, item_value: 1, tools: "no" },
-        "金敷(小さな銅鑼)": { displayName: "金敷", recipe: "小さな銅鑼_金敷", recipeLabel: "小さな銅鑼", facility_multiplier: 2, item_value: 95, tools: "" },
-        "金敷(鈴)": { displayName: "金敷", recipe: "鈴_金敷", recipeLabel: "鈴", facility_multiplier: 1, item_value: 425, tools: "" },
-        "金敷(儀式の鐘)": { displayName: "金敷", recipe: "儀式の鐘_金敷", recipeLabel: "儀式の鐘", facility_multiplier: 1, item_value: 80, tools: "" },
-        "金敷(青銅の灯篭)": { displayName: "金敷", recipe: "青銅の灯篭_金敷", recipeLabel: "青銅の灯篭", facility_multiplier: 1, item_value: 350, tools: "" }
+        "金敷(小さな銅鑼)": { displayName: "金敷", recipe: "小さな銅鑼_金敷", recipeLabel: "小さな銅鑼", facility_multiplier: 2, item_value: 95, tools: "槌全般" },
+        "金敷(鈴)": { displayName: "金敷", recipe: "鈴_金敷", recipeLabel: "鈴", facility_multiplier: 1, item_value: 425, tools: "槌全般" },
+        "金敷(儀式の鐘)": { displayName: "金敷", recipe: "儀式の鐘_金敷", recipeLabel: "儀式の鐘", facility_multiplier: 1, item_value: 80, tools: "槌全般" },
+        "金敷(青銅の灯篭)": { displayName: "金敷", recipe: "青銅の灯篭_金敷", recipeLabel: "青銅の灯篭", facility_multiplier: 1, item_value: 350, tools: "槌全般" },
+        "石工所(天照大御神の像)": { displayName: "石工所", recipe: "天照大御神の像_石工所", recipeLabel: "天照大御神の像", facility_multiplier: 1, item_value: 110, tools: "彫刻刀" }
       }
     },
     "健康": {
@@ -433,9 +450,9 @@ const MODEL = {
     },
     "飲み物": {
       facilities: {
-        "シンプルな井戸": { recipe: "水_シンプル井戸", recipeLabel: "水", facility_multiplier: 1, item_value: 4, tools: "" },
-        "上級井戸": { recipe: "水_上級井戸", recipeLabel: "水", facility_multiplier: 1, item_value: 4, tools: "" },
-        "大きな井戸": { recipe: "水_大井戸", recipeLabel: "水", facility_multiplier: 1, item_value: 4, tools: "" },
+        "シンプルな井戸": { recipe: "水_シンプル井戸", recipeLabel: "水", facility_multiplier: 1, item_value: 4, tools: "桶" },
+        "上級井戸": { recipe: "水_上級井戸", recipeLabel: "水", facility_multiplier: 1, item_value: 4, tools: "桶" },
+        "大きな井戸": { recipe: "水_大井戸", recipeLabel: "水", facility_multiplier: 1, item_value: 4, tools: "桶" },
         "茶室": { recipe: "茶室_茶会", recipeLabel: "茶会", facility_multiplier: 1, item_value: 10, tools: "no" },
         "酒場の調理場(茶)": { displayName: "酒場の調理場", recipe: "茶(酒場の調理場版)_酒場の調理場", recipeLabel: "茶", facility_multiplier: 2, item_value: 10, tools: "no" },
         "台所の調理場(茶)": { displayName: "台所の調理場", recipe: "茶(酒場の調理場版)_台所の調理場", recipeLabel: "茶", facility_multiplier: 2, item_value: 10, tools: "no" },
@@ -446,6 +463,9 @@ const MODEL = {
         "囲炉裏の仕事場(甘酒)": { displayName: "囲炉裏の仕事場", recipe: "甘酒_囲炉裏の仕事場", recipeLabel: "甘酒", facility_multiplier: 2, item_value: 8, tools: "no" },
         "酒場の調理場(どぶろく)": { displayName: "酒場の調理場", recipe: "どぶろく_酒場の調理場", recipeLabel: "どぶろく", facility_multiplier: 4, item_value: 18, tools: "no" },
         "台所の調理場(どぶろく)": { displayName: "台所の調理場", recipe: "どぶろく_台所の調理場", recipeLabel: "どぶろく", facility_multiplier: 4, item_value: 18, tools: "no" },
+        "圧力ろ過器(日本酒)": { displayName: "圧力ろ過器", recipe: "日本酒_圧力ろ過器", recipeLabel: "日本酒", facility_multiplier: 4, item_value: 36, tools: "no" },
+        "焼酎蒸留所(焼酎)": { displayName: "焼酎蒸留所", recipe: "焼酎_焼酎蒸留所", recipeLabel: "焼酎", facility_multiplier: 6, item_value: 60, tools: "no" },
+        "仕立て台(ヒョウタンノキの水容器)": { displayName: "仕立て台", recipe: "ヒョウタンノキの水容器_仕立て台", recipeLabel: "ヒョウタンノキの水容器", facility_multiplier: 1, item_value: 150, tools: "小刀全般" },
         "囲炉裏と調理鍋の仕事場(どぶろく)": { displayName: "囲炉裏と調理鍋の仕事場", recipe: "どぶろく_囲炉裏と調理鍋の仕事場", recipeLabel: "どぶろく", facility_multiplier: 4, item_value: 18, tools: "no" },
         "囲炉裏の仕事場(どぶろく)": { displayName: "囲炉裏の仕事場", recipe: "どぶろく_囲炉裏の仕事場", recipeLabel: "どぶろく", facility_multiplier: 4, item_value: 18, tools: "no" }
       }
@@ -456,15 +476,22 @@ const MODEL = {
         "酒場(水x2)": { displayName: "酒場", recipe: "酒場の主人(水x2)", recipeLabel: "酒場の主人(水x2)", facility_multiplier: 6, item_value: 1, tools: "no" },
         "酒場(水x1+アルコールを含まない飲料全般x1)": { displayName: "酒場", recipe: "酒場の主人(水x1+アルコールを含まない飲料全般x1)", recipeLabel: "酒場の主人(水x1+アルコールを含まない飲料全般x1)", facility_multiplier: 8, item_value: 1, tools: "no" },
         "酒場(水x1+アルコール飲料全般x1)": { displayName: "酒場", recipe: "酒場の主人(水x1+アルコール飲料全般x1)", recipeLabel: "酒場の主人(水x1+アルコール飲料全般x1)", facility_multiplier: 12, item_value: 1, tools: "no" },
-        "鉱夫の仕事場(氷)": { displayName: "鉱夫の仕事場", recipe: "氷_鉱夫の仕事場", recipeLabel: "氷", facility_multiplier: 1, item_value: 4, tools: "" },
-        "金敷(香炉)": { displayName: "金敷", recipe: "香炉_金敷", recipeLabel: "香炉", facility_multiplier: 1, item_value: 105, tools: "" }
+        "鉱夫の仕事場(氷)": { displayName: "鉱夫の仕事場", recipe: "氷_鉱夫の仕事場", recipeLabel: "氷", facility_multiplier: 1, item_value: 4, tools: "つるはし全般" },
+        "金敷(香炉)": { displayName: "金敷", recipe: "香炉_金敷", recipeLabel: "香炉", facility_multiplier: 1, item_value: 105, tools: "槌全般" }
       }
     },
     "修繕": {
       facilities: {
         "陶芸窯(陶器)": { displayName: "陶芸窯", recipe: "陶器_陶芸窯", recipeLabel: "陶器", facility_multiplier: 1, item_value: 28, tools: "no" },
         "草の乾燥棚": { recipe: "藁_草の乾燥棚", recipeLabel: "藁", facility_multiplier: 1, item_value: 1, tools: "no" },
-        "ヤシの葉の乾燥棚": { recipe: "藁_ヤシの葉の乾燥棚", recipeLabel: "藁", facility_multiplier: 3, item_value: 1, tools: "no" }
+        "ヤシの葉の乾燥棚": { recipe: "藁_ヤシの葉の乾燥棚", recipeLabel: "藁", facility_multiplier: 3, item_value: 1, tools: "no" },
+        "石工所": { recipe: "彫刻した石_石工所", recipeLabel: "彫刻した石", facility_multiplier: 1, item_value: 22, tools: "彫刻刀" },
+        "鉱夫の仕事場(粘土)": { displayName: "鉱夫の仕事場", recipe: "粘土_鉱夫の仕事場", recipeLabel: "粘土", facility_multiplier: 1, item_value: 10, tools: "つるはし全般" },
+        "大工作業台(板(針葉樹))": { displayName: "大工作業台", recipe: "板(針葉樹)_大工作業台", recipeLabel: "板(針葉樹)", facility_multiplier: 6, item_value: 4, tools: "釿全般" },
+        "大工作業台(板(落葉樹))": { displayName: "大工作業台", recipe: "板(落葉樹)_大工作業台", recipeLabel: "板(落葉樹)", facility_multiplier: 6, item_value: 4, tools: "釿全般" },
+        "大工作業台(板(上質な針葉樹))": { displayName: "大工作業台", recipe: "板(上質な針葉樹)_大工作業台", recipeLabel: "板(上質な針葉樹)", facility_multiplier: 6, item_value: 6, tools: "釿全般" },
+        "大工作業台(板(上質な落葉樹))": { displayName: "大工作業台", recipe: "板(上質な落葉樹)_大工作業台", recipeLabel: "板(上質な落葉樹)", facility_multiplier: 6, item_value: 6, tools: "釿全般" },
+        "大工作業台(板(果樹))": { displayName: "大工作業台", recipe: "板(果樹)_大工作業台", recipeLabel: "板(果樹)", facility_multiplier: 6, item_value: 9, tools: "釿全般" }
       }
     }
   }
