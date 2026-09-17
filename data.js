@@ -176,7 +176,36 @@ const MODEL = {
     "魚_漁師の仕事場": { base_cost0_num: 3, base_cost0_den: 2 },
     "魚_基本の釣り場": { base_cost0_num: 2, base_cost0_den: 1 },
     "魚_匠の釣り場": { base_cost0_num: 8, base_cost0_den: 5 },
-    "魚_高度な釣り場": { base_cost0_num: 20, base_cost0_den: 11 }
+    "魚_高度な釣り場": { base_cost0_num: 20, base_cost0_den: 11 },
+    "治癒の飲料_調薬台": { base_cost0_num: 3, base_cost0_den: 1 },
+    "治癒の包帯_調薬台": { base_cost0_num: 4, base_cost0_den: 1 },
+    "治癒の軟膏_調薬台": { base_cost0_num: 4, base_cost0_den: 1 },
+    "火傷軟膏_調薬台": { base_cost0_num: 4, base_cost0_den: 1 },
+    "温かい飲み物_調薬台": { base_cost0_num: 3, base_cost0_den: 1 },
+    "風邪薬_調薬台": { base_cost0_num: 4, base_cost0_den: 1 },
+    "栄養剤_調薬台": { base_cost0_num: 5, base_cost0_den: 2 },
+    "蚊よけ_調薬台": { base_cost0_num: 4, base_cost0_den: 1 },
+    "冷たい飲み物_調薬台": { base_cost0_num: 5, base_cost0_den: 2 },
+    "痛み止め_調薬台": { base_cost0_num: 4, base_cost0_den: 1 },
+    "対毒調合薬_調薬台": { base_cost0_num: 15, base_cost0_den: 2 },
+    "解毒薬_調薬台": { base_cost0_num: 25, base_cost0_den: 2 },
+    "マラリア治療薬_調薬台": { base_cost0_num: 25, base_cost0_den: 2 },
+    "果実の抽出液_調薬台": { base_cost0_num: 5, base_cost0_den: 1 },
+    "プラムの抽出液_調薬台": { base_cost0_num: 5, base_cost0_den: 1 },
+    "柚子の抽出液_調薬台": { base_cost0_num: 5, base_cost0_den: 1 },
+    "兵糧丸_調薬台": { base_cost0_num: 5, base_cost0_den: 2 },
+    "陶器_陶芸窯": { base_cost0_num: 2, base_cost0_den: 1 },
+    "氷_鉱夫の仕事場": { base_cost0_num: 3, base_cost0_den: 2 },
+    "蜂蜜_小さな蜜蜂の巣箱": { base_cost0_num: 13, base_cost0_den: 10 },
+    "蜂蜜_大きな蜜蜂の巣箱": { base_cost0_num: 13, base_cost0_den: 20 },
+    "藁_草の乾燥棚": { base_cost0_num: 2, base_cost0_den: 5 },
+    "藁_ヤシの葉の乾燥棚": { base_cost0_num: 1, base_cost0_den: 1 },
+    "木炭_炭窯": { base_cost0_num: 6, base_cost0_den: 5 },
+    "小さな銅鑼_金敷": { base_cost0_num: 15, base_cost0_den: 2 },
+    "鈴_金敷": { base_cost0_num: 6, base_cost0_den: 1 },
+    "香炉_金敷": { base_cost0_num: 25, base_cost0_den: 2 },
+    "儀式の鐘_金敷": { base_cost0_num: 3, base_cost0_den: 2 },
+    "青銅の灯篭_金敷": { base_cost0_num: 6, base_cost0_den: 1 }
   },
   categories: {
     "食事": {
@@ -313,7 +342,10 @@ const MODEL = {
         "採集者の仕事場(三つ葉)": { displayName: "採集者の仕事場", recipe: "三つ葉_採集者の仕事場", recipeLabel: "三つ葉", facility_multiplier: 1, item_value: 2, tools: "no" },
         "採集者の仕事場(木苺)": { displayName: "採集者の仕事場", recipe: "木苺_採集者の仕事場", recipeLabel: "木苺", facility_multiplier: 1, item_value: 2, tools: "no" },
         "採集者の仕事場(コケモモ)": { displayName: "採集者の仕事場", recipe: "コケモモ_採集者の仕事場", recipeLabel: "コケモモ", facility_multiplier: 1, item_value: 2, tools: "no" },
-        "採集者の仕事場(プラム)": { displayName: "採集者の仕事場", recipe: "プラム_採集者の仕事場", recipeLabel: "プラム", facility_multiplier: 1, item_value: 3, tools: "no" }
+        "採集者の仕事場(プラム)": { displayName: "採集者の仕事場", recipe: "プラム_採集者の仕事場", recipeLabel: "プラム", facility_multiplier: 1, item_value: 3, tools: "no" },
+        "調薬台(兵糧丸)": { displayName: "調薬台", recipe: "兵糧丸_調薬台", recipeLabel: "兵糧丸", facility_multiplier: 3, item_value: 35, tools: "no" },
+        "小さな蜜蜂の巣箱": { recipe: "蜂蜜_小さな蜜蜂の巣箱", recipeLabel: "蜂蜜", facility_multiplier: 1, item_value: 4, tools: "no" },
+        "大きな蜜蜂の巣箱": { recipe: "蜂蜜_大きな蜜蜂の巣箱", recipeLabel: "蜂蜜", facility_multiplier: 1, item_value: 4, tools: "no" }
       }
     },
     "安全性": {
@@ -336,7 +368,8 @@ const MODEL = {
         "搾油(油)": { displayName: "搾油", recipe: "油_搾油", recipeLabel: "油", facility_multiplier: 1, item_value: 45, tools: "no" },
         "採集者の仕事場(枝)": { displayName: "採集者の仕事場", recipe: "枝_採集者の仕事場", recipeLabel: "枝", facility_multiplier: 1, item_value: 1, tools: "no" },
         "採集者の仕事場(樹皮)": { displayName: "採集者の仕事場", recipe: "樹皮_採集者の仕事場", recipeLabel: "樹皮", facility_multiplier: 1, item_value: 1, tools: "no" },
-        "採集者の仕事場(梶の樹皮)": { displayName: "採集者の仕事場", recipe: "梶の樹皮_採集者の仕事場", recipeLabel: "梶の樹皮", facility_multiplier: 1, item_value: 1, tools: "no" }
+        "採集者の仕事場(梶の樹皮)": { displayName: "採集者の仕事場", recipe: "梶の樹皮_採集者の仕事場", recipeLabel: "梶の樹皮", facility_multiplier: 1, item_value: 1, tools: "no" },
+        "炭窯": { recipe: "木炭_炭窯", recipeLabel: "木炭", facility_multiplier: 2, item_value: 12, tools: "no" }
       }
     },
     "信仰": {
@@ -366,7 +399,11 @@ const MODEL = {
         "大きな天神社": { recipe: "神主_大社", recipeLabel: "神主", facility_multiplier: 50, item_value: 1, tools: "no" },
         "小さな八幡神社": { recipe: "神主_小社", recipeLabel: "神主", facility_multiplier: 50, item_value: 1, tools: "no" },
         "八幡神社": { recipe: "神主_中社", recipeLabel: "神主", facility_multiplier: 50, item_value: 1, tools: "no" },
-        "大きな八幡神社": { recipe: "神主_大社", recipeLabel: "神主", facility_multiplier: 50, item_value: 1, tools: "no" }
+        "大きな八幡神社": { recipe: "神主_大社", recipeLabel: "神主", facility_multiplier: 50, item_value: 1, tools: "no" },
+        "金敷(小さな銅鑼)": { displayName: "金敷", recipe: "小さな銅鑼_金敷", recipeLabel: "小さな銅鑼", facility_multiplier: 2, item_value: 95, tools: "" },
+        "金敷(鈴)": { displayName: "金敷", recipe: "鈴_金敷", recipeLabel: "鈴", facility_multiplier: 1, item_value: 425, tools: "" },
+        "金敷(儀式の鐘)": { displayName: "金敷", recipe: "儀式の鐘_金敷", recipeLabel: "儀式の鐘", facility_multiplier: 1, item_value: 80, tools: "" },
+        "金敷(青銅の灯篭)": { displayName: "金敷", recipe: "青銅の灯篭_金敷", recipeLabel: "青銅の灯篭", facility_multiplier: 1, item_value: 350, tools: "" }
       }
     },
     "健康": {
@@ -375,7 +412,23 @@ const MODEL = {
         "酒場(水x2)": { displayName: "酒場", recipe: "酒場の主人(水x2)", recipeLabel: "酒場の主人(水x2)", facility_multiplier: 6, item_value: 1, tools: "no" },
         "酒場(水x1+アルコールを含まない飲料全般x1)": { displayName: "酒場", recipe: "酒場の主人(水x1+アルコールを含まない飲料全般x1)", recipeLabel: "酒場の主人(水x1+アルコールを含まない飲料全般x1)", facility_multiplier: 6, item_value: 1, tools: "no" },
         "酒場(水x1+アルコール飲料全般x1)": { displayName: "酒場", recipe: "酒場の主人(水x1+アルコール飲料全般x1)", recipeLabel: "酒場の主人(水x1+アルコール飲料全般x1)", facility_multiplier: 4, item_value: 1, tools: "no" },
-        "採集者の仕事場(菊の花)": { displayName: "採集者の仕事場", recipe: "菊の花_採集者の仕事場", recipeLabel: "菊の花", facility_multiplier: 1, item_value: 1, tools: "no" }
+        "採集者の仕事場(菊の花)": { displayName: "採集者の仕事場", recipe: "菊の花_採集者の仕事場", recipeLabel: "菊の花", facility_multiplier: 1, item_value: 1, tools: "no" },
+        "調薬台(治癒の飲料)": { displayName: "調薬台", recipe: "治癒の飲料_調薬台", recipeLabel: "治癒の飲料", facility_multiplier: 1, item_value: 15, tools: "no" },
+        "調薬台(治癒の包帯)": { displayName: "調薬台", recipe: "治癒の包帯_調薬台", recipeLabel: "治癒の包帯", facility_multiplier: 1, item_value: 50, tools: "no" },
+        "調薬台(治癒の軟膏)": { displayName: "調薬台", recipe: "治癒の軟膏_調薬台", recipeLabel: "治癒の軟膏", facility_multiplier: 1, item_value: 90, tools: "no" },
+        "調薬台(火傷軟膏)": { displayName: "調薬台", recipe: "火傷軟膏_調薬台", recipeLabel: "火傷軟膏", facility_multiplier: 1, item_value: 30, tools: "no" },
+        "調薬台(温かい飲み物)": { displayName: "調薬台", recipe: "温かい飲み物_調薬台", recipeLabel: "温かい飲み物", facility_multiplier: 1, item_value: 12, tools: "no" },
+        "調薬台(風邪薬)": { displayName: "調薬台", recipe: "風邪薬_調薬台", recipeLabel: "風邪薬", facility_multiplier: 1, item_value: 25, tools: "no" },
+        "調薬台(栄養剤)": { displayName: "調薬台", recipe: "栄養剤_調薬台", recipeLabel: "栄養剤", facility_multiplier: 1, item_value: 43, tools: "no" },
+        "調薬台(蚊よけ)": { displayName: "調薬台", recipe: "蚊よけ_調薬台", recipeLabel: "蚊よけ", facility_multiplier: 1, item_value: 60, tools: "no" },
+        "調薬台(冷たい飲み物)": { displayName: "調薬台", recipe: "冷たい飲み物_調薬台", recipeLabel: "冷たい飲み物", facility_multiplier: 1, item_value: 40, tools: "no" },
+        "調薬台(痛み止め)": { displayName: "調薬台", recipe: "痛み止め_調薬台", recipeLabel: "痛み止め", facility_multiplier: 1, item_value: 125, tools: "no" },
+        "調薬台(対毒調合薬)": { displayName: "調薬台", recipe: "対毒調合薬_調薬台", recipeLabel: "対毒調合薬", facility_multiplier: 1, item_value: 175, tools: "no" },
+        "調薬台(解毒薬)": { displayName: "調薬台", recipe: "解毒薬_調薬台", recipeLabel: "解毒薬", facility_multiplier: 1, item_value: 235, tools: "no" },
+        "調薬台(マラリア治療薬)": { displayName: "調薬台", recipe: "マラリア治療薬_調薬台", recipeLabel: "マラリア治療薬", facility_multiplier: 1, item_value: 260, tools: "no" },
+        "調薬台(果実の抽出液)": { displayName: "調薬台", recipe: "果実の抽出液_調薬台", recipeLabel: "果実の抽出液", facility_multiplier: 1, item_value: 30, tools: "no" },
+        "調薬台(プラムの抽出液)": { displayName: "調薬台", recipe: "プラムの抽出液_調薬台", recipeLabel: "プラムの抽出液", facility_multiplier: 1, item_value: 50, tools: "no" },
+        "調薬台(柚子の抽出液)": { displayName: "調薬台", recipe: "柚子の抽出液_調薬台", recipeLabel: "柚子の抽出液", facility_multiplier: 1, item_value: 50, tools: "no" }
       }
     },
     "飲み物": {
@@ -402,7 +455,16 @@ const MODEL = {
         "茶室": { recipe: "茶室_茶会", recipeLabel: "茶会", facility_multiplier: 5, item_value: 1, tools: "no" },
         "酒場(水x2)": { displayName: "酒場", recipe: "酒場の主人(水x2)", recipeLabel: "酒場の主人(水x2)", facility_multiplier: 6, item_value: 1, tools: "no" },
         "酒場(水x1+アルコールを含まない飲料全般x1)": { displayName: "酒場", recipe: "酒場の主人(水x1+アルコールを含まない飲料全般x1)", recipeLabel: "酒場の主人(水x1+アルコールを含まない飲料全般x1)", facility_multiplier: 8, item_value: 1, tools: "no" },
-        "酒場(水x1+アルコール飲料全般x1)": { displayName: "酒場", recipe: "酒場の主人(水x1+アルコール飲料全般x1)", recipeLabel: "酒場の主人(水x1+アルコール飲料全般x1)", facility_multiplier: 12, item_value: 1, tools: "no" }
+        "酒場(水x1+アルコール飲料全般x1)": { displayName: "酒場", recipe: "酒場の主人(水x1+アルコール飲料全般x1)", recipeLabel: "酒場の主人(水x1+アルコール飲料全般x1)", facility_multiplier: 12, item_value: 1, tools: "no" },
+        "鉱夫の仕事場(氷)": { displayName: "鉱夫の仕事場", recipe: "氷_鉱夫の仕事場", recipeLabel: "氷", facility_multiplier: 1, item_value: 4, tools: "" },
+        "金敷(香炉)": { displayName: "金敷", recipe: "香炉_金敷", recipeLabel: "香炉", facility_multiplier: 1, item_value: 105, tools: "" }
+      }
+    },
+    "修繕": {
+      facilities: {
+        "陶芸窯(陶器)": { displayName: "陶芸窯", recipe: "陶器_陶芸窯", recipeLabel: "陶器", facility_multiplier: 1, item_value: 28, tools: "no" },
+        "草の乾燥棚": { recipe: "藁_草の乾燥棚", recipeLabel: "藁", facility_multiplier: 1, item_value: 1, tools: "no" },
+        "ヤシの葉の乾燥棚": { recipe: "藁_ヤシの葉の乾燥棚", recipeLabel: "藁", facility_multiplier: 3, item_value: 1, tools: "no" }
       }
     }
   }

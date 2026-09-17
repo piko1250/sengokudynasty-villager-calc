@@ -29,7 +29,7 @@ editConditionBtn.addEventListener('click', () => {
   editConditionBtn.textContent = willOpen ? '閉じる' : '条件を変更する';
 });
 
-let openResultDetailKey = null;
+let openResultDetailKeys = new Set();
 
 function openDetail(icon) {
   let detail = icon._detailEl;
@@ -65,7 +65,10 @@ document.addEventListener('click', (e) => {
   } else {
     openDetail(icon);
   }
-  if (icon.dataset.key) openResultDetailKey = alreadyOpen ? null : icon.dataset.key;
+  if (icon.dataset.key) {
+    if (alreadyOpen) openResultDetailKeys.delete(icon.dataset.key);
+    else openResultDetailKeys.add(icon.dataset.key);
+  }
 });
 document.addEventListener('keydown', (e) => {
   if ((e.key === 'Enter' || e.key === ' ') && e.target.classList.contains('info-icon')) {
@@ -195,7 +198,7 @@ function compute() {
     const metaClass = r.cycles !== r.maxCycles ? 'fcard-meta fcard-meta-adjusted' : 'fcard-meta';
     row.innerHTML = `<span class="cycle-stepper"><button type="button" class="cycle-btn" data-key="${r.overrideKey}" data-dir="-1" data-cycles="${r.cycles}" ${minusDisabled}>－</button><button type="button" class="cycle-btn" data-key="${r.overrideKey}" data-dir="1" data-cycles="${r.cycles}" ${plusDisabled}>＋</button></span><span class="fcard-final">${r.output.toLocaleString()}:</span><span class="fcard-name">${r.facilityName} / ${r.recipeLabel}<span class="${metaClass}" data-key="${r.overrideKey}" data-cycles="${r.cycles}" data-max="${r.maxCycles}">生産:${r.cycles}/${r.maxCycles} 作業量:${r.actualBudget.toFixed(1)}%</span><span class="info-icon" tabindex="0" data-key="${r.overrideKey}" data-tip="${breakdown.replace(/"/g, '&quot;')}">i</span></span>`;
     body.appendChild(row);
-    if (r.overrideKey === openResultDetailKey) openDetail(row.querySelector('.info-icon'));
+    if (openResultDetailKeys.has(r.overrideKey)) openDetail(row.querySelector('.info-icon'));
   });
 }
 
