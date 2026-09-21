@@ -140,8 +140,11 @@ function computeFacility(overrideKey, facilityName, facility, level, tool, actio
   const levelFactor = BigInt(50 + level);
   const cost0NumI = BigInt(recipe.base_cost0_num);
   const cost0DenI = BigInt(recipe.base_cost0_den);
-  const maxCyclesI = floorDiv(targetI * perkMultI * levelFactor * cost0DenI, cost0NumI * 50n * RATIO_SCALE * RATIO_SCALE);
-  const maxCycles = Number(maxCyclesI);
+  const laborMaxCyclesI = floorDiv(targetI * perkMultI * levelFactor * cost0DenI, cost0NumI * 50n * RATIO_SCALE * RATIO_SCALE);
+  const laborMaxCycles = Number(laborMaxCyclesI);
+  const landCapped = facility.land_size_max != null && facility.land_size_max < laborMaxCycles;
+  const maxCycles = landCapped ? facility.land_size_max : laborMaxCycles;
+  const maxCyclesI = landCapped ? BigInt(facility.land_size_max) : laborMaxCyclesI;
 
   const override = cycleOverrides[overrideKey];
   const cycles = override == null ? maxCycles : Math.max(0, Math.min(override, maxCycles));
@@ -161,7 +164,7 @@ function computeFacility(overrideKey, facilityName, facility, level, tool, actio
   const maxUnitsI = floorDiv(maxCyclesI * multNumI * toolI, multDenI * RATIO_SCALE);
   const maxOutput = Number(maxUnitsI) * facility.facility_multiplier * itemValue;
 
-  return { overrideKey, facilityName, facility, recipeLabel: facility.recipeLabel, cost, targetBudget, actualBudget, cycles, maxCycles, skillMatch, mult, tool: effectiveTool, toolCapped, units, itemValue, output, maxOutput };
+  return { overrideKey, facilityName, facility, recipeLabel: facility.recipeLabel, cost, targetBudget, actualBudget, cycles, maxCycles, skillMatch, mult, tool: effectiveTool, toolCapped, landCapped, units, itemValue, output, maxOutput };
 }
 
 function compute() {
@@ -190,8 +193,8 @@ function compute() {
     row.className = 'fcard-head';
     const breakdown = [
       `レシピの作業量コスト: ${r.cost.toFixed(1)}% ※実測データからの予測値`,
-      `現在の作業量: ${r.actualBudget.toFixed(1)}% ※${r.cycles} x ${r.cost.toFixed(1)}%(表示上、端数を省略しています)`,
-      `生産(現在/最大): ${r.cycles}/${r.maxCycles} ※${r.targetBudget.toFixed(0)}% ÷ ${r.cost.toFixed(1)}%(表示上、端数を省略しています)`,
+      `現在の作業量: ${r.actualBudget.toFixed(1)}% ※${r.cycles} x ${r.cost.toFixed(1)}%(端数省略)`,
+      `生産(現在/最大): ${r.cycles}/${r.landCapped ? `<b class="land-capped">${r.maxCycles}</b>` : r.maxCycles} ※${r.targetBudget.toFixed(0)}% ÷ ${r.cost.toFixed(1)}%(端数省略${r.landCapped ? `/農地の大きさ${r.maxCycles}を適用` : ""})`,
       `道具生産調整: ${r.toolCapped ? `<b class="tool-capped">x${fmtTool(r.tool)}</b>` : `x${fmtTool(r.tool)}`}${r.facility.tools === "no" ? " ※このレシピは道具を使用しません" : (r.toolCapped ? ` ※このレシピで設定可能な最大値${fmtTool(r.tool)}を適用します` : "")}`,
       `専門ボーナス: x${r.mult}`,
       `結果: (${r.cycles} x ${r.mult} x ${fmtTool(r.tool)})(小数点以下切り捨て) x 施設倍率(${r.facility.facility_multiplier}) x 村人の要求(${r.itemValue}) = ${r.output.toLocaleString()}`
