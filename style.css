@@ -43,7 +43,7 @@ h1{
   letter-spacing:.02em;
 }
 
-.lang-switch{display:flex;gap:6px;flex:none}
+.lang-switch{display:flex;gap:6px;flex:none;margin-left:auto}
 .lang-switch[hidden]{display:none}
 .lang-switch button{
   font-family:monospace;
