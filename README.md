@@ -2,6 +2,9 @@
 
 Try it here: https://piko1250.github.io/sengokudynasty-villager-calc/
 
+Game version checked: 1.2.3.0  
+(Data may be outdated if the game has since updated.)
+
 ## About (EN)
 
 A production calculator for Sengoku Dynasty. Enter your worker's level,
