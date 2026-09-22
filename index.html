@@ -1,16 +1,17 @@
 <!doctype html>
-<html lang="ja">
+<html lang="en">
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Sengoku Dynasty Villager Output Calculator</title>
-<meta name="description" content="村人の生産量を計算するツール。レベルや道具、パークなどの条件を変えて確認できます。">
-<meta property="og:description" content="村人の生産量を計算するツール。レベルや道具、パークなどの条件を変えて確認できます。">
+<meta name="description" content="[JP/EN] 村人の生産量計算ツール / Villager production calculator">
+<meta property="og:description" content="[JP/EN] 村人の生産量計算ツール / Villager production calculator">
 <meta property="og:title" content="Sengoku Dynasty Villager Output Calculator">
 <meta property="og:site_name" content="piko1250.github.io">
 <meta property="og:url" content="https://piko1250.github.io/sengokudynasty-villager-calc/">
 <meta property="og:type" content="website">
 <link rel="stylesheet" href="style.css">
+<noscript><style>body{visibility:visible !important}</style></noscript>
 </head>
 <body>
 
@@ -18,29 +19,28 @@
   <header>
     <div>
       <h1>Sengoku Dynasty Villager Output Calculator</h1>
-      <p class="subtitle">開発中につき、一部の機能のみ実装しています(完成するかは未定です)</p>
     </div>
-    <div class="lang-switch" hidden>
-      <button type="button" class="on">JP</button>
-      <button type="button" disabled title="未実装">EN</button>
+    <div class="lang-switch" id="langSwitch">
+      <button type="button" data-lang="ja">JP</button>
+      <button type="button" class="on" data-lang="en">EN</button>
     </div>
   </header>
 
   <section id="viewOutput">
-    <h2 class="block-title">カテゴリ</h2>
+    <h2 class="block-title" data-i18n="heading-categories">Categories</h2>
     <div class="seg" id="categorySeg" style="margin-bottom:16px"></div>
 
-    <h2 class="block-title">条件</h2>
+    <h2 class="block-title" data-i18n="heading-parameters">Parameters</h2>
     <div class="params-row" style="margin-bottom:16px">
       <p class="params-line" id="paramsOut"></p>
-      <button type="button" id="editConditionBtn" class="edit-condition-btn">条件を変更する</button>
+      <button type="button" id="editConditionBtn" class="edit-condition-btn" data-i18n="btn-edit-parameters">Edit Parameters</button>
     </div>
 
     <div class="condition-panel" id="conditionPanel">
-      <p class="subtitle" style="margin:0 0 12px">ここで変更した条件はすぐに生産量へ反映されます。既定値はLv100・パーク3pt・道具生産調整3.0・専門ボーナスありです</p>
+      <p class="subtitle" style="margin:0 0 12px" data-i18n="parameters-desc">Changes here are applied to the production output immediately. Defaults: Level 100, Perk 3pt, Tool Production Modifier 3.0, Specialization Bonus on.</p>
 
       <div class="field">
-        <label for="level">村人レベル<span class="info-icon" tabindex="0" data-tip="0〜100の範囲で設定します。スライダーのドラッグ、または数値欄への直接入力で調整できます">i</span></label>
+        <label for="level"><span data-i18n="label-worker-level">Worker Level</span><span class="info-icon" tabindex="0" data-tip-ja="0〜100の範囲で設定します。スライダーのドラッグ、または数値欄への直接入力で調整できます" data-tip-en="Set a value from 0 to 100. Drag the slider, or type a number directly.">i</span></label>
         <div class="range-row">
           <input type="range" id="level" min="0" max="100" value="100">
           <input type="number" id="levelNum" min="0" max="100" value="100" inputmode="numeric">
@@ -48,7 +48,7 @@
       </div>
 
       <div class="field">
-        <label>パーク<span class="info-icon" tabindex="0" data-tip="「統治者の道」の「労働者生産性訓練」。労働者の総容量が増加します(1: +5% / 2: +10% / 3: +15%)">i</span></label>
+        <label><span data-i18n="label-perk">Perk</span><span class="info-icon" tabindex="0" data-tip-ja="「統治者の道」の「労働者生産性訓練」。労働者の総容量が増加します(1: +5% / 2: +10% / 3: +15%)" data-tip-en="From &quot;Worker Productivity Training&quot; in the &quot;Way of the Leader&quot; skill tree. Increases the total workload capacity of your workers. (1: +5% / 2: +10% / 3: +15%)">i</span></label>
         <div class="seg compact" id="perkSeg">
           <button data-v="0">0</button>
           <button data-v="1">1</button>
@@ -58,52 +58,52 @@
       </div>
 
       <div class="field" id="toolField">
-        <label for="tool">道具生産調整<span class="info-icon" tabindex="0" data-tip="道具が合計生産量に与える倍率。道具を使用しないレシピでは常に1として計算します">i</span></label>
+        <label for="tool"><span data-i18n="label-tool">Tool Production Modifier</span><span class="info-icon" tabindex="0" data-tip-ja="道具が合計生産量に与える倍率。道具を使用しないレシピでは常に1として計算します" data-tip-en="The multiplier tools apply to total production. For recipes that don't use tools, this is always treated as 1.">i</span></label>
         <input type="number" id="tool" class="compact-num" min="0" step="0.1" value="3.0" inputmode="decimal">
       </div>
 
       <div class="field">
-        <label>専門ボーナス<span class="info-icon" tabindex="0" data-tip="労働者が専門とする仕事場で作業できる場合、合計生産量が1.25倍になります">i</span></label>
+        <label><span data-i18n="label-skill">Specialization Bonus</span><span class="info-icon" tabindex="0" data-tip-ja="労働者が専門とする仕事場で作業できる場合、合計生産量が1.25倍になります" data-tip-en="If the worker's specialization matches the workplace, total production increases by 25%.">i</span></label>
         <div class="toggle">
           <input type="checkbox" id="skillMatch" checked>
-          <label for="skillMatch" style="font-size:.82rem">村人の専門とこの施設の専門が一致している</label>
+          <label for="skillMatch" style="font-size:.82rem" data-i18n="checkbox-skill-match">Worker specialization matches the workplace</label>
         </div>
       </div>
-      <p class="subtitle2" style="margin:8px 4px 0;padding-top:7px;border-top:1px solid var(--paper-line);font-size:.76rem;text-align:right">各項目の <span class="info-icon" style="cursor:default">i</span> で説明を確認できます</p>
+      <p class="subtitle2" style="margin:8px 4px 0;padding-top:7px;border-top:1px solid var(--paper-line);font-size:.76rem;text-align:right"><span data-i18n="hint-field-info-before">Click the </span><span class="info-icon" style="cursor:default">i</span><span data-i18n="hint-field-info-after"> next to each field for details.</span></p>
     </div>
 
-    <h2 class="block-title">結果</h2>
-    <p class="subtitle" style="margin:-4px 0 8px;font-size:.8rem">一日の生産量(降順): 施設名 / レシピ 生産:現在/最大 作業量</p>
-    <section aria-label="計算結果">
+    <h2 class="block-title" data-i18n="heading-results">Results</h2>
+    <p class="subtitle" style="margin:-4px 0 8px;font-size:.8rem" data-i18n="results-subtitle">Daily Production (descending): Facility / Recipe Production:current/max Workload</p>
+    <section aria-label="Results" aria-label-ja="計算結果" aria-label-en="Results">
       <div id="resultsBody"></div>
     </section>
-    <p class="subtitle2" style="margin:0 4px;font-size:.76rem;text-align:right">各行の生産(回数)は行頭の-/+で増減、またはクリックで直接入力ができます</p>
-    <p class="subtitle2" style="margin:0 4px;font-size:.76rem;text-align:right">施設名の横の <span class="info-icon" style="cursor:default">i</span> で詳細を確認できます</p>
+    <p class="subtitle2" style="margin:0 4px;font-size:.76rem;text-align:right" data-i18n="hint-row-edit">Increase or decrease each row's production count with the -/+ buttons, or click to type a value directly.</p>
+    <p class="subtitle2" style="margin:0 4px;font-size:.76rem;text-align:right"><span data-i18n="hint-facility-info-before">Click the </span><span class="info-icon" style="cursor:default">i</span><span data-i18n="hint-facility-info-after"> next to the facility name for details.</span></p>
   </section>
 
   <div class="notes">
-    <h2 class="block-title">用語</h2>
+    <h2 class="block-title" data-i18n="heading-glossary">Glossary</h2>
     <ul class="glossary">
-      <li><b>レシピの作業量コスト</b>1回の作業で消費する作業量。レベル及びパークによって変動する</li>
-      <li><b>生産</b>作業量をレシピの作業量コストで割った回数。1日の間に村人が作業を行うことができる回数</li>
-      <li><b>合計生産量</b>生産に専門ボーナス・道具生産調整を反映した値</li>
-      <li><b>施設倍率</b>施設ごとに決まっている固定の倍率（仮称）</li>
-      <li><b>村人の要求</b>生産物1個が満たす要求の量。生産物自体が要求そのもの（警備員や神職など）の場合は1</li>
-      <li><b>一日の生産量</b>合計生産量に施設倍率・村人の要求を掛けた、本ツールの最終出力値</li>
+      <li><b data-i18n="gloss-workload-cost-term">Recipe Workload Cost</b><span data-i18n="gloss-workload-cost-desc">The workload consumed per action. Varies with worker level and perk.</span></li>
+      <li><b data-i18n="gloss-production-term">Production</b><span data-i18n="gloss-production-desc">The workload divided by the recipe's workload cost, rounded down. The number of times a worker can perform the action in a day.</span></li>
+      <li><b data-i18n="gloss-total-production-term">Total Production</b><span data-i18n="gloss-total-production-desc">Production with the specialization bonus and tool production modifier applied.</span></li>
+      <li><b data-i18n="gloss-facility-multiplier-term">Facility Multiplier</b><span data-i18n="gloss-facility-multiplier-desc">A fixed multiplier determined per facility (tentative name).</span></li>
+      <li><b data-i18n="gloss-villager-requirement-term">Villager Requirement</b><span data-i18n="gloss-villager-requirement-desc">The amount of demand one unit of the product satisfies. This is 1 when the product itself is the requirement (e.g. guards, priests).</span></li>
+      <li><b data-i18n="gloss-daily-production-term">Daily Production</b><span data-i18n="gloss-daily-production-desc">Total production multiplied by the facility multiplier and the villager requirement — the tool's final output value.</span></li>
     </ul>
   </div>
 
   <div class="notes">
-    <h2 class="block-title">本ツールについて</h2>
+    <h2 class="block-title" data-i18n="heading-about">About This Tool</h2>
     <ul class="formula-list">
-      <li>道具の耐久値や素材の在庫不足を考慮していないため、実際の生産はこれらの影響で理論値を下回ることがあります。</li>
-      <li>計算に用いている各種係数は、実測データをもとに生成した予想値にもとづいているため、実際の結果と異なる事があります。</li>
-      <li>用語は出来る限りゲーム内表示に合わせていますが、完全な一致を保証するものではありません。</li>
+      <li data-i18n="about-item-1">This tool doesn't account for tool durability or material shortages, so actual production may fall below the calculated value due to these factors.</li>
+      <li data-i18n="about-item-2">The coefficients used in the calculation are estimates derived from measured data, so actual results may differ.</li>
+      <li data-i18n="about-item-3">Terminology is matched to in-game display as closely as possible, but an exact match is not guaranteed.</li>
     </ul>
   </div>
 
   <footer>
-    <p>Sengoku Dynasty - Version: 1.2.3.0/2026.09.21<span style="white-space:nowrap">（個人調べ）</span></p>
+    <p>Sengoku Dynasty - Version: 1.2.3.0/2026.09.23<span style="white-space:nowrap" data-i18n="footer-note">(personal research)</span></p>
   </footer>
 </div>
 
