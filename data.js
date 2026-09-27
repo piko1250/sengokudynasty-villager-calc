@@ -130,9 +130,9 @@ const MODEL = {
     "recipe_110": { base_cost0_num: 5, base_cost0_den: 4 }, // 調理した魚_台所の調理場
     "recipe_111": { base_cost0_num: 2, base_cost0_den: 1 }, // 調理した魚_囲炉裏と調理鍋の仕事場
     "recipe_112": { base_cost0_num: 2, base_cost0_den: 1 }, // 調理した魚_囲炉裏の仕事場
-    "recipe_113": { base_cost0_num: 1, base_cost0_den: 1 }, // 炊いた米_酒場の調理場
-    "recipe_114": { base_cost0_num: 5, base_cost0_den: 4 }, // 炊いた米_台所の調理場
-    "recipe_115": { base_cost0_num: 2, base_cost0_den: 1 }, // 炊いた米_囲炉裏と調理鍋の仕事場
+    "recipe_113": { base_cost0_num: 1, base_cost0_den: 1 }, // 炊いた米(お米10+水1)_酒場の調理場
+    "recipe_114": { base_cost0_num: 5, base_cost0_den: 4 }, // 炊いた米(お米10+水1)_台所の調理場
+    "recipe_115": { base_cost0_num: 2, base_cost0_den: 1 }, // 炊いた米(お米10+水1)_囲炉裏と調理鍋の仕事場
     "recipe_116": { base_cost0_num: 3, base_cost0_den: 4 }, // 干し果実_酒場の調理場
     "recipe_117": { base_cost0_num: 15, base_cost0_den: 16 }, // 干し果実_台所の調理場
     "recipe_118": { base_cost0_num: 3, base_cost0_den: 2 }, // 干し果実_囲炉裏と調理鍋の仕事場
@@ -313,6 +313,7 @@ const MODEL = {
     "recipe_293": { base_cost0_num: 5, base_cost0_den: 1 }, // ろうそく_木工作業台
     "recipe_294": { base_cost0_num: 5, base_cost0_den: 1 }, // 竹のろうそく_木工作業台
     "recipe_295": { base_cost0_num: 5, base_cost0_den: 1 }, // 枝_大工作業台
+    "recipe_296": { base_cost0_num: 2, base_cost0_den: 1 }, // 炊いた米(お米8+薪1+水1)_炊飯樽
   },
   categories: {
     "meals": {
@@ -337,9 +338,9 @@ const MODEL = {
         "meals_018": { displayName: { ja: "台所の調理場", en: "Kitchen Cooking Station" }, recipe: "recipe_110", recipeLabel: { ja: "調理した魚", en: "Cooked Fish" }, facility_multiplier: 1, item_value: 9 },
         "meals_019": { displayName: { ja: "囲炉裏と調理鍋の仕事場", en: "Sunken Hearth with Cooking Pot Workplace" }, recipe: "recipe_111", recipeLabel: { ja: "調理した魚", en: "Cooked Fish" }, facility_multiplier: 1, item_value: 9 },
         "meals_020": { displayName: { ja: "囲炉裏の仕事場", en: "Sunken Hearth Workplace" }, recipe: "recipe_112", recipeLabel: { ja: "調理した魚", en: "Cooked Fish" }, facility_multiplier: 1, item_value: 9 },
-        "meals_021": { displayName: { ja: "酒場の調理場", en: "Tavern Cooking Station" }, recipe: "recipe_113", recipeLabel: { ja: "炊いた米", en: "Cooked Rice" }, facility_multiplier: 1, item_value: 24 },
-        "meals_022": { displayName: { ja: "台所の調理場", en: "Kitchen Cooking Station" }, recipe: "recipe_114", recipeLabel: { ja: "炊いた米", en: "Cooked Rice" }, facility_multiplier: 1, item_value: 24 },
-        "meals_023": { displayName: { ja: "囲炉裏と調理鍋の仕事場", en: "Sunken Hearth with Cooking Pot Workplace" }, recipe: "recipe_115", recipeLabel: { ja: "炊いた米", en: "Cooked Rice" }, facility_multiplier: 1, item_value: 24 },
+        "meals_021": { displayName: { ja: "酒場の調理場", en: "Tavern Cooking Station" }, recipe: "recipe_113", recipeLabel: { ja: "炊いた米(お米10+水1)", en: "Cooked Rice (Rice x10 + Water x1)" }, facility_multiplier: 1, item_value: 24 },
+        "meals_022": { displayName: { ja: "台所の調理場", en: "Kitchen Cooking Station" }, recipe: "recipe_114", recipeLabel: { ja: "炊いた米(お米10+水1)", en: "Cooked Rice (Rice x10 + Water x1)" }, facility_multiplier: 1, item_value: 24 },
+        "meals_023": { displayName: { ja: "囲炉裏と調理鍋の仕事場", en: "Sunken Hearth with Cooking Pot Workplace" }, recipe: "recipe_115", recipeLabel: { ja: "炊いた米(お米10+水1)", en: "Cooked Rice (Rice x10 + Water x1)" }, facility_multiplier: 1, item_value: 24 },
         "meals_024": { displayName: { ja: "酒場の調理場", en: "Tavern Cooking Station" }, recipe: "recipe_116", recipeLabel: { ja: "干し果実", en: "Dried Fruit" }, facility_multiplier: 1, item_value: 7 },
         "meals_025": { displayName: { ja: "台所の調理場", en: "Kitchen Cooking Station" }, recipe: "recipe_117", recipeLabel: { ja: "干し果実", en: "Dried Fruit" }, facility_multiplier: 1, item_value: 7 },
         "meals_026": { displayName: { ja: "囲炉裏と調理鍋の仕事場", en: "Sunken Hearth with Cooking Pot Workplace" }, recipe: "recipe_118", recipeLabel: { ja: "干し果実", en: "Dried Fruit" }, facility_multiplier: 1, item_value: 7 },
@@ -462,7 +463,8 @@ const MODEL = {
         "meals_143": { displayName: { ja: "採集者の仕事場", en: "Forager's Workplace" }, recipe: "recipe_235", recipeLabel: { ja: "プラム", en: "Plum" }, facility_multiplier: 1, item_value: 3 },
         "meals_144": { displayName: { ja: "調薬台", en: "Herbalist Station" }, recipe: "recipe_236", recipeLabel: { ja: "兵糧丸", en: "Provision Balls (Hyōrōgan)" }, facility_multiplier: 3, item_value: 35 },
         "meals_145": { displayName: { ja: "小さな蜜蜂の巣箱", en: "Small Beehive" }, recipe: "recipe_237", recipeLabel: { ja: "蜂蜜", en: "Honey" }, facility_multiplier: 1, item_value: 4 },
-        "meals_146": { displayName: { ja: "大きな蜜蜂の巣箱", en: "Large Beehive" }, recipe: "recipe_238", recipeLabel: { ja: "蜂蜜", en: "Honey" }, facility_multiplier: 1, item_value: 4 }
+        "meals_146": { displayName: { ja: "大きな蜜蜂の巣箱", en: "Large Beehive" }, recipe: "recipe_238", recipeLabel: { ja: "蜂蜜", en: "Honey" }, facility_multiplier: 1, item_value: 4 },
+        "meals_147": { displayName: { ja: "炊飯樽", en: "Rice Boiling Barrel" }, recipe: "recipe_296", recipeLabel: { ja: "炊いた米(お米8+薪1+水1)", en: "Cooked Rice (Rice x8 + Firewood x1 + Water x1)" }, facility_multiplier: 1, item_value: 24, tools: "stirring_tool" }
       }
     },
     "security": {
