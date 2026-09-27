@@ -32,8 +32,8 @@ const MODEL = {
     "recipe_067": { base_cost0_num: 4, base_cost0_den: 10 }, // 水_大井戸
     "recipe_068": { base_cost0_num: 2, base_cost0_den: 1 }, // 茶室_茶会 (beverages/luxuryで共有)
     "recipe_045": { base_cost0_num: 2, base_cost0_den: 1 }, // 酒場の主人(水x2) (health/luxuryで共有)
-    "recipe_046": { base_cost0_num: 2, base_cost0_den: 1 }, // 酒場の主人(水x1+アルコールを含まない飲料全般x1) (health/luxuryで共有)
-    "recipe_047": { base_cost0_num: 2, base_cost0_den: 1 }, // 酒場の主人(水x1+アルコール飲料全般x1) (health/luxuryで共有)
+    "recipe_046": { base_cost0_num: 2, base_cost0_den: 1 }, // 酒場の主人(水x1 + アルコールを含まない飲料全般x1) (health/luxuryで共有)
+    "recipe_047": { base_cost0_num: 2, base_cost0_den: 1 }, // 酒場の主人(水x1 + アルコール飲料全般x1) (health/luxuryで共有)
     "recipe_005": { base_cost0_num: 5, base_cost0_den: 4 }, // 油(魚)_酒場の調理場
     "recipe_006": { base_cost0_num: 25, base_cost0_den: 16 }, // 油(魚)_台所の調理場
     "recipe_007": { base_cost0_num: 5, base_cost0_den: 2 }, // 油(魚)_囲炉裏と調理鍋の仕事場
@@ -83,11 +83,11 @@ const MODEL = {
     "recipe_031": { base_cost0_num: 10, base_cost0_den: 1 }, // 八幡像_石工所
     "recipe_087": { base_cost0_num: 4, base_cost0_den: 1 }, // 粘土_鉱夫の仕事場
     "recipe_012": { base_cost0_num: 3, base_cost0_den: 1 }, // 薪_大工作業台
-    "recipe_088": { base_cost0_num: 3, base_cost0_den: 1 }, // 板(針葉樹)_大工作業台
-    "recipe_089": { base_cost0_num: 3, base_cost0_den: 1 }, // 板(落葉樹)_大工作業台
-    "recipe_090": { base_cost0_num: 7, base_cost0_den: 2 }, // 板(上質な針葉樹)_大工作業台
-    "recipe_091": { base_cost0_num: 7, base_cost0_den: 2 }, // 板(上質な落葉樹)_大工作業台
-    "recipe_092": { base_cost0_num: 4, base_cost0_den: 1 }, // 板(果樹)_大工作業台
+    "recipe_088": { base_cost0_num: 3, base_cost0_den: 1 }, // 板(針葉樹の丸太全般 x1)_大工作業台
+    "recipe_089": { base_cost0_num: 3, base_cost0_den: 1 }, // 板(落葉樹の丸太全般 x1)_大工作業台
+    "recipe_090": { base_cost0_num: 7, base_cost0_den: 2 }, // 板(上質な針葉樹の丸太全般 x1)_大工作業台
+    "recipe_091": { base_cost0_num: 7, base_cost0_den: 2 }, // 板(上質な落葉樹の丸太全般 x1)_大工作業台
+    "recipe_092": { base_cost0_num: 4, base_cost0_den: 1 }, // 板(果樹の丸太全般 x1)_大工作業台
     "recipe_080": { base_cost0_num: 2, base_cost0_den: 1 }, // 日本酒_圧力ろ過器
     "recipe_081": { base_cost0_num: 2, base_cost0_den: 1 }, // 焼酎_焼酎蒸留所
     "recipe_082": { base_cost0_num: 15, base_cost0_den: 2 }, // ヒョウタンノキの水容器_仕立て台
@@ -130,9 +130,9 @@ const MODEL = {
     "recipe_110": { base_cost0_num: 5, base_cost0_den: 4 }, // 調理した魚_台所の調理場
     "recipe_111": { base_cost0_num: 2, base_cost0_den: 1 }, // 調理した魚_囲炉裏と調理鍋の仕事場
     "recipe_112": { base_cost0_num: 2, base_cost0_den: 1 }, // 調理した魚_囲炉裏の仕事場
-    "recipe_113": { base_cost0_num: 1, base_cost0_den: 1 }, // 炊いた米(お米10+水1)_酒場の調理場
-    "recipe_114": { base_cost0_num: 5, base_cost0_den: 4 }, // 炊いた米(お米10+水1)_台所の調理場
-    "recipe_115": { base_cost0_num: 2, base_cost0_den: 1 }, // 炊いた米(お米10+水1)_囲炉裏と調理鍋の仕事場
+    "recipe_113": { base_cost0_num: 1, base_cost0_den: 1 }, // 炊いた米(お米 x10 + 水 x1)_酒場の調理場
+    "recipe_114": { base_cost0_num: 5, base_cost0_den: 4 }, // 炊いた米(お米 x10 + 水 x1)_台所の調理場
+    "recipe_115": { base_cost0_num: 2, base_cost0_den: 1 }, // 炊いた米(お米 x10 + 水 x1)_囲炉裏と調理鍋の仕事場
     "recipe_116": { base_cost0_num: 3, base_cost0_den: 4 }, // 干し果実_酒場の調理場
     "recipe_117": { base_cost0_num: 15, base_cost0_den: 16 }, // 干し果実_台所の調理場
     "recipe_118": { base_cost0_num: 3, base_cost0_den: 2 }, // 干し果実_囲炉裏と調理鍋の仕事場
@@ -167,73 +167,73 @@ const MODEL = {
     "recipe_147": { base_cost0_num: 5, base_cost0_den: 4 }, // 具沢山味噌汁_台所の調理場
     "recipe_148": { base_cost0_num: 7, base_cost0_den: 4 }, // 鍋_酒場の調理場
     "recipe_149": { base_cost0_num: 35, base_cost0_den: 16 }, // 鍋_台所の調理場
-    "recipe_150": { base_cost0_num: 7, base_cost0_den: 4 }, // 質素な魚料理(魚1+豆全般5)_酒場の調理場
-    "recipe_151": { base_cost0_num: 35, base_cost0_den: 16 }, // 質素な魚料理(魚1+豆全般5)_台所の調理場
-    "recipe_152": { base_cost0_num: 7, base_cost0_den: 2 }, // 質素な魚料理(魚1+豆全般5)_囲炉裏と調理鍋の仕事場
-    "recipe_153": { base_cost0_num: 7, base_cost0_den: 4 }, // 質素な魚料理(魚1+食用キノコ全般1)_酒場の調理場
-    "recipe_154": { base_cost0_num: 35, base_cost0_den: 16 }, // 質素な魚料理(魚1+食用キノコ全般1)_台所の調理場
-    "recipe_155": { base_cost0_num: 7, base_cost0_den: 2 }, // 質素な魚料理(魚1+食用キノコ全般1)_囲炉裏と調理鍋の仕事場
-    "recipe_156": { base_cost0_num: 5, base_cost0_den: 2 }, // きちんとした魚料理(魚2+薬草全般3+穀物全般1)_酒場の調理場
-    "recipe_157": { base_cost0_num: 25, base_cost0_den: 8 }, // きちんとした魚料理(魚2+薬草全般3+穀物全般1)_台所の調理場
-    "recipe_158": { base_cost0_num: 5, base_cost0_den: 1 }, // きちんとした魚料理(魚2+薬草全般3+穀物全般1)_囲炉裏と調理鍋の仕事場
-    "recipe_159": { base_cost0_num: 5, base_cost0_den: 2 }, // きちんとした魚料理(魚1+薬草全般4+食用キノコ全般1)_酒場の調理場
-    "recipe_160": { base_cost0_num: 25, base_cost0_den: 8 }, // きちんとした魚料理(魚1+薬草全般4+食用キノコ全般1)_台所の調理場
-    "recipe_161": { base_cost0_num: 5, base_cost0_den: 1 }, // きちんとした魚料理(魚1+薬草全般4+食用キノコ全般1)_囲炉裏と調理鍋の仕事場
-    "recipe_162": { base_cost0_num: 15, base_cost0_den: 4 }, // 豪華な魚料理(魚1+穀物全般5+豆全般10)_酒場の調理場
-    "recipe_163": { base_cost0_num: 15, base_cost0_den: 4 }, // 豪華な魚料理(魚2+お米7+薬草全般2)_酒場の調理場
+    "recipe_150": { base_cost0_num: 7, base_cost0_den: 4 }, // 質素な魚料理(魚 x1 + 豆全般 x5)_酒場の調理場
+    "recipe_151": { base_cost0_num: 35, base_cost0_den: 16 }, // 質素な魚料理(魚 x1 + 豆全般 x5)_台所の調理場
+    "recipe_152": { base_cost0_num: 7, base_cost0_den: 2 }, // 質素な魚料理(魚 x1 + 豆全般 x5)_囲炉裏と調理鍋の仕事場
+    "recipe_153": { base_cost0_num: 7, base_cost0_den: 4 }, // 質素な魚料理(魚 x1 + 食用キノコ全般 x1)_酒場の調理場
+    "recipe_154": { base_cost0_num: 35, base_cost0_den: 16 }, // 質素な魚料理(魚 x1 + 食用キノコ全般 x1)_台所の調理場
+    "recipe_155": { base_cost0_num: 7, base_cost0_den: 2 }, // 質素な魚料理(魚 x1 + 食用キノコ全般 x1)_囲炉裏と調理鍋の仕事場
+    "recipe_156": { base_cost0_num: 5, base_cost0_den: 2 }, // きちんとした魚料理(魚 x2 + 薬草全般 x3 + 穀物全般 x1)_酒場の調理場
+    "recipe_157": { base_cost0_num: 25, base_cost0_den: 8 }, // きちんとした魚料理(魚 x2 + 薬草全般 x3 + 穀物全般 x1)_台所の調理場
+    "recipe_158": { base_cost0_num: 5, base_cost0_den: 1 }, // きちんとした魚料理(魚 x2 + 薬草全般 x3 + 穀物全般 x1)_囲炉裏と調理鍋の仕事場
+    "recipe_159": { base_cost0_num: 5, base_cost0_den: 2 }, // きちんとした魚料理(魚 x1 + 薬草全般 x4 + 食用キノコ全般 x1)_酒場の調理場
+    "recipe_160": { base_cost0_num: 25, base_cost0_den: 8 }, // きちんとした魚料理(魚 x1 + 薬草全般 x4 + 食用キノコ全般 x1)_台所の調理場
+    "recipe_161": { base_cost0_num: 5, base_cost0_den: 1 }, // きちんとした魚料理(魚 x1 + 薬草全般 x4 + 食用キノコ全般 x1)_囲炉裏と調理鍋の仕事場
+    "recipe_162": { base_cost0_num: 15, base_cost0_den: 4 }, // 豪華な魚料理(魚 x1 + 穀物全般 x5 + 豆全般 x10)_酒場の調理場
+    "recipe_163": { base_cost0_num: 15, base_cost0_den: 4 }, // 豪華な魚料理(魚 x2 + お米 x7 + 薬草全般 x2)_酒場の調理場
     "recipe_164": { base_cost0_num: 7, base_cost0_den: 4 }, // なれずし_酒場の調理場
     "recipe_165": { base_cost0_num: 35, base_cost0_den: 16 }, // なれずし_台所の調理場
-    "recipe_166": { base_cost0_num: 7, base_cost0_den: 4 }, // 質素な肉料理(生肉1+穀物全般6)_酒場の調理場
-    "recipe_167": { base_cost0_num: 35, base_cost0_den: 16 }, // 質素な肉料理(生肉1+穀物全般6)_台所の調理場
-    "recipe_168": { base_cost0_num: 7, base_cost0_den: 2 }, // 質素な肉料理(生肉1+穀物全般6)_囲炉裏と調理鍋の仕事場
-    "recipe_169": { base_cost0_num: 7, base_cost0_den: 4 }, // 質素な肉料理(生肉1+食用キノコ全般1)_酒場の調理場
-    "recipe_170": { base_cost0_num: 35, base_cost0_den: 16 }, // 質素な肉料理(生肉1+食用キノコ全般1)_台所の調理場
-    "recipe_171": { base_cost0_num: 7, base_cost0_den: 2 }, // 質素な肉料理(生肉1+食用キノコ全般1)_囲炉裏と調理鍋の仕事場
-    "recipe_172": { base_cost0_num: 7, base_cost0_den: 4 }, // 質素な肉料理(生肉1+豆全般5)_酒場の調理場
-    "recipe_173": { base_cost0_num: 35, base_cost0_den: 16 }, // 質素な肉料理(生肉1+豆全般5)_台所の調理場
-    "recipe_174": { base_cost0_num: 7, base_cost0_den: 2 }, // 質素な肉料理(生肉1+豆全般5)_囲炉裏と調理鍋の仕事場
-    "recipe_175": { base_cost0_num: 5, base_cost0_den: 2 }, // きちんとした肉料理(生肉1+卵1+豆全般6)_酒場の調理場
-    "recipe_176": { base_cost0_num: 25, base_cost0_den: 8 }, // きちんとした肉料理(生肉1+卵1+豆全般6)_台所の調理場
-    "recipe_177": { base_cost0_num: 5, base_cost0_den: 1 }, // きちんとした肉料理(生肉1+卵1+豆全般6)_囲炉裏と調理鍋の仕事場
-    "recipe_178": { base_cost0_num: 5, base_cost0_den: 2 }, // きちんとした肉料理(生肉2+薬草全般2+穀物全般1)_酒場の調理場
-    "recipe_179": { base_cost0_num: 25, base_cost0_den: 8 }, // きちんとした肉料理(生肉2+薬草全般2+穀物全般1)_台所の調理場
-    "recipe_180": { base_cost0_num: 5, base_cost0_den: 1 }, // きちんとした肉料理(生肉2+薬草全般2+穀物全般1)_囲炉裏と調理鍋の仕事場
-    "recipe_181": { base_cost0_num: 5, base_cost0_den: 2 }, // きちんとした肉料理(生肉1+薬草全般4+食用キノコ全般6)_酒場の調理場
-    "recipe_182": { base_cost0_num: 25, base_cost0_den: 8 }, // きちんとした肉料理(生肉1+薬草全般4+食用キノコ全般6)_台所の調理場
-    "recipe_183": { base_cost0_num: 5, base_cost0_den: 1 }, // きちんとした肉料理(生肉1+薬草全般4+食用キノコ全般6)_囲炉裏と調理鍋の仕事場
-    "recipe_184": { base_cost0_num: 15, base_cost0_den: 4 }, // 豪華な肉料理(生肉2+穀物全般4+豆全般4)_酒場の調理場
-    "recipe_185": { base_cost0_num: 15, base_cost0_den: 4 }, // 豪華な肉料理(生肉2+お米5+薬草全般3)_酒場の調理場
-    "recipe_186": { base_cost0_num: 15, base_cost0_den: 4 }, // 豪華な肉料理(生肉1+お米4+食用キノコ全般2)_酒場の調理場
+    "recipe_166": { base_cost0_num: 7, base_cost0_den: 4 }, // 質素な肉料理(生肉 x1 + 穀物全般 x6)_酒場の調理場
+    "recipe_167": { base_cost0_num: 35, base_cost0_den: 16 }, // 質素な肉料理(生肉 x1 + 穀物全般 x6)_台所の調理場
+    "recipe_168": { base_cost0_num: 7, base_cost0_den: 2 }, // 質素な肉料理(生肉 x1 + 穀物全般 x6)_囲炉裏と調理鍋の仕事場
+    "recipe_169": { base_cost0_num: 7, base_cost0_den: 4 }, // 質素な肉料理(生肉 x1 + 食用キノコ全般 x1)_酒場の調理場
+    "recipe_170": { base_cost0_num: 35, base_cost0_den: 16 }, // 質素な肉料理(生肉 x1 + 食用キノコ全般 x1)_台所の調理場
+    "recipe_171": { base_cost0_num: 7, base_cost0_den: 2 }, // 質素な肉料理(生肉 x1 + 食用キノコ全般 x1)_囲炉裏と調理鍋の仕事場
+    "recipe_172": { base_cost0_num: 7, base_cost0_den: 4 }, // 質素な肉料理(生肉 x1 + 豆全般 x5)_酒場の調理場
+    "recipe_173": { base_cost0_num: 35, base_cost0_den: 16 }, // 質素な肉料理(生肉 x1 + 豆全般 x5)_台所の調理場
+    "recipe_174": { base_cost0_num: 7, base_cost0_den: 2 }, // 質素な肉料理(生肉 x1 + 豆全般 x5)_囲炉裏と調理鍋の仕事場
+    "recipe_175": { base_cost0_num: 5, base_cost0_den: 2 }, // きちんとした肉料理(生肉 x1 + 卵 x1 + 豆全般 x6)_酒場の調理場
+    "recipe_176": { base_cost0_num: 25, base_cost0_den: 8 }, // きちんとした肉料理(生肉 x1 + 卵 x1 + 豆全般 x6)_台所の調理場
+    "recipe_177": { base_cost0_num: 5, base_cost0_den: 1 }, // きちんとした肉料理(生肉 x1 + 卵 x1 + 豆全般 x6)_囲炉裏と調理鍋の仕事場
+    "recipe_178": { base_cost0_num: 5, base_cost0_den: 2 }, // きちんとした肉料理(生肉 x2 + 薬草全般 x2 + 穀物全般 x1)_酒場の調理場
+    "recipe_179": { base_cost0_num: 25, base_cost0_den: 8 }, // きちんとした肉料理(生肉 x2 + 薬草全般 x2 + 穀物全般 x1)_台所の調理場
+    "recipe_180": { base_cost0_num: 5, base_cost0_den: 1 }, // きちんとした肉料理(生肉 x2 + 薬草全般 x2 + 穀物全般 x1)_囲炉裏と調理鍋の仕事場
+    "recipe_181": { base_cost0_num: 5, base_cost0_den: 2 }, // きちんとした肉料理(生肉 x1 + 薬草全般 x4 + 食用キノコ全般 x6)_酒場の調理場
+    "recipe_182": { base_cost0_num: 25, base_cost0_den: 8 }, // きちんとした肉料理(生肉 x1 + 薬草全般 x4 + 食用キノコ全般 x6)_台所の調理場
+    "recipe_183": { base_cost0_num: 5, base_cost0_den: 1 }, // きちんとした肉料理(生肉 x1 + 薬草全般 x4 + 食用キノコ全般 x6)_囲炉裏と調理鍋の仕事場
+    "recipe_184": { base_cost0_num: 15, base_cost0_den: 4 }, // 豪華な肉料理(生肉 x2 + 穀物全般 x4 + 豆全般 x4)_酒場の調理場
+    "recipe_185": { base_cost0_num: 15, base_cost0_den: 4 }, // 豪華な肉料理(生肉 x2 + お米 x5 + 薬草全般 x3)_酒場の調理場
+    "recipe_186": { base_cost0_num: 15, base_cost0_den: 4 }, // 豪華な肉料理(生肉 x1 + お米 x4 + 食用キノコ全般 x2)_酒場の調理場
     "recipe_187": { base_cost0_num: 7, base_cost0_den: 4 }, // 焼き鳥_酒場の調理場
-    "recipe_188": { base_cost0_num: 7, base_cost0_den: 4 }, // 質素な野菜料理(野菜全般5+豆全般3)_酒場の調理場
-    "recipe_189": { base_cost0_num: 7, base_cost0_den: 4 }, // 質素な野菜料理(野菜全般5+薬草全般3)_酒場の調理場
-    "recipe_190": { base_cost0_num: 7, base_cost0_den: 4 }, // 質素な野菜料理(野菜全般4+食用キノコ全般1)_酒場の調理場
-    "recipe_191": { base_cost0_num: 5, base_cost0_den: 2 }, // きちんとした野菜料理(大豆10+麹2)_酒場の調理場
-    "recipe_192": { base_cost0_num: 5, base_cost0_den: 2 }, // きちんとした野菜料理(水1+穀物全般6+果実全般3)_酒場の調理場
-    "recipe_193": { base_cost0_num: 5, base_cost0_den: 2 }, // きちんとした野菜料理(水1+豆全般6+薬草全般3)_酒場の調理場
-    "recipe_194": { base_cost0_num: 15, base_cost0_den: 4 }, // 豪華な野菜料理(穀物全般7+油1+水1+サトイモ8)_酒場の調理場
-    "recipe_195": { base_cost0_num: 15, base_cost0_den: 4 }, // 豪華な野菜料理(お米12+しいたけ2+ネギ5+油1)_酒場の調理場
-    "recipe_196": { base_cost0_num: 15, base_cost0_den: 4 }, // 豪華な野菜料理(小麦7+野菜全般8+わさび3+油1)_酒場の調理場
+    "recipe_188": { base_cost0_num: 7, base_cost0_den: 4 }, // 質素な野菜料理(野菜全般 x5 + 豆全般 x3)_酒場の調理場
+    "recipe_189": { base_cost0_num: 7, base_cost0_den: 4 }, // 質素な野菜料理(野菜全般 x5 + 薬草全般 x3)_酒場の調理場
+    "recipe_190": { base_cost0_num: 7, base_cost0_den: 4 }, // 質素な野菜料理(野菜全般 x4 + 食用キノコ全般 x1)_酒場の調理場
+    "recipe_191": { base_cost0_num: 5, base_cost0_den: 2 }, // きちんとした野菜料理(大豆 x10 + 麹 x2)_酒場の調理場
+    "recipe_192": { base_cost0_num: 5, base_cost0_den: 2 }, // きちんとした野菜料理(水 x1 + 穀物全般 x6 + 果実全般 x3)_酒場の調理場
+    "recipe_193": { base_cost0_num: 5, base_cost0_den: 2 }, // きちんとした野菜料理(水 x1 + 豆全般 x6 + 薬草全般 x3)_酒場の調理場
+    "recipe_194": { base_cost0_num: 15, base_cost0_den: 4 }, // 豪華な野菜料理(穀物全般 x7 + 油 x1 + 水 x1 + サトイモ x8)_酒場の調理場
+    "recipe_195": { base_cost0_num: 15, base_cost0_den: 4 }, // 豪華な野菜料理(お米 x12 + しいたけ x2 + ネギ x5 + 油 x1)_酒場の調理場
+    "recipe_196": { base_cost0_num: 15, base_cost0_den: 4 }, // 豪華な野菜料理(小麦 x7 + 野菜全般 x8 + わさび x3 + 油 x1)_酒場の調理場
     "recipe_197": { base_cost0_num: 1, base_cost0_den: 1 }, // 豆腐_酒場の調理場
     "recipe_198": { base_cost0_num: 7, base_cost0_den: 4 }, // 田楽_酒場の調理場
     "recipe_199": { base_cost0_num: 35, base_cost0_den: 16 }, // 田楽_台所の調理場
     "recipe_200": { base_cost0_num: 35, base_cost0_den: 16 }, // 焼き鳥_台所の調理場
     "recipe_201": { base_cost0_num: 5, base_cost0_den: 4 }, // 味噌_台所の調理場
     "recipe_202": { base_cost0_num: 5, base_cost0_den: 4 }, // 豆腐_台所の調理場
-    "recipe_203": { base_cost0_num: 35, base_cost0_den: 16 }, // 質素な野菜料理(野菜全般5+豆全般3)_台所の調理場
-    "recipe_204": { base_cost0_num: 7, base_cost0_den: 2 }, // 質素な野菜料理(野菜全般5+豆全般3)_囲炉裏と調理鍋の仕事場
-    "recipe_205": { base_cost0_num: 7, base_cost0_den: 2 }, // 質素な野菜料理(野菜全般5+豆全般3)_囲炉裏の仕事場
-    "recipe_206": { base_cost0_num: 35, base_cost0_den: 16 }, // 質素な野菜料理(野菜全般5+薬草全般3)_台所の調理場
-    "recipe_207": { base_cost0_num: 7, base_cost0_den: 2 }, // 質素な野菜料理(野菜全般5+薬草全般3)_囲炉裏と調理鍋の仕事場
-    "recipe_208": { base_cost0_num: 7, base_cost0_den: 2 }, // 質素な野菜料理(野菜全般5+薬草全般3)_囲炉裏の仕事場
-    "recipe_209": { base_cost0_num: 35, base_cost0_den: 16 }, // 質素な野菜料理(野菜全般4+食用キノコ全般1)_台所の調理場
-    "recipe_210": { base_cost0_num: 7, base_cost0_den: 2 }, // 質素な野菜料理(野菜全般4+食用キノコ全般1)_囲炉裏と調理鍋の仕事場
-    "recipe_211": { base_cost0_num: 25, base_cost0_den: 8 }, // きちんとした野菜料理(大豆10+麹2)_台所の調理場
-    "recipe_212": { base_cost0_num: 5, base_cost0_den: 1 }, // きちんとした野菜料理(大豆10+麹2)_囲炉裏と調理鍋の仕事場
-    "recipe_213": { base_cost0_num: 25, base_cost0_den: 8 }, // きちんとした野菜料理(水1+穀物全般6+果実全般3)_台所の調理場
-    "recipe_214": { base_cost0_num: 5, base_cost0_den: 1 }, // きちんとした野菜料理(水1+穀物全般6+果実全般3)_囲炉裏と調理鍋の仕事場
-    "recipe_215": { base_cost0_num: 25, base_cost0_den: 8 }, // きちんとした野菜料理(水1+豆全般6+薬草全般3)_台所の調理場
-    "recipe_216": { base_cost0_num: 5, base_cost0_den: 1 }, // きちんとした野菜料理(水1+豆全般6+薬草全般3)_囲炉裏と調理鍋の仕事場
+    "recipe_203": { base_cost0_num: 35, base_cost0_den: 16 }, // 質素な野菜料理(野菜全般 x5 + 豆全般 x3)_台所の調理場
+    "recipe_204": { base_cost0_num: 7, base_cost0_den: 2 }, // 質素な野菜料理(野菜全般 x5 + 豆全般 x3)_囲炉裏と調理鍋の仕事場
+    "recipe_205": { base_cost0_num: 7, base_cost0_den: 2 }, // 質素な野菜料理(野菜全般 x5 + 豆全般 x3)_囲炉裏の仕事場
+    "recipe_206": { base_cost0_num: 35, base_cost0_den: 16 }, // 質素な野菜料理(野菜全般 x5 + 薬草全般 x3)_台所の調理場
+    "recipe_207": { base_cost0_num: 7, base_cost0_den: 2 }, // 質素な野菜料理(野菜全般 x5 + 薬草全般 x3)_囲炉裏と調理鍋の仕事場
+    "recipe_208": { base_cost0_num: 7, base_cost0_den: 2 }, // 質素な野菜料理(野菜全般 x5 + 薬草全般 x3)_囲炉裏の仕事場
+    "recipe_209": { base_cost0_num: 35, base_cost0_den: 16 }, // 質素な野菜料理(野菜全般 x4 + 食用キノコ全般 x1)_台所の調理場
+    "recipe_210": { base_cost0_num: 7, base_cost0_den: 2 }, // 質素な野菜料理(野菜全般 x4 + 食用キノコ全般 x1)_囲炉裏と調理鍋の仕事場
+    "recipe_211": { base_cost0_num: 25, base_cost0_den: 8 }, // きちんとした野菜料理(大豆 x10 + 麹 x2)_台所の調理場
+    "recipe_212": { base_cost0_num: 5, base_cost0_den: 1 }, // きちんとした野菜料理(大豆 x10 + 麹 x2)_囲炉裏と調理鍋の仕事場
+    "recipe_213": { base_cost0_num: 25, base_cost0_den: 8 }, // きちんとした野菜料理(水 x1 + 穀物全般 x6 + 果実全般 x3)_台所の調理場
+    "recipe_214": { base_cost0_num: 5, base_cost0_den: 1 }, // きちんとした野菜料理(水 x1 + 穀物全般 x6 + 果実全般 x3)_囲炉裏と調理鍋の仕事場
+    "recipe_215": { base_cost0_num: 25, base_cost0_den: 8 }, // きちんとした野菜料理(水 x1 + 豆全般 x6 + 薬草全般 x3)_台所の調理場
+    "recipe_216": { base_cost0_num: 5, base_cost0_den: 1 }, // きちんとした野菜料理(水 x1 + 豆全般 x6 + 薬草全般 x3)_囲炉裏と調理鍋の仕事場
     "recipe_217": { base_cost0_num: 7, base_cost0_den: 2 }, // 団子_囲炉裏と調理鍋の仕事場
     "recipe_218": { base_cost0_num: 7, base_cost0_den: 2 }, // 団子_囲炉裏の仕事場
     "recipe_219": { base_cost0_num: 5, base_cost0_den: 4 }, // 調理した肉_酒場の調理場
@@ -313,7 +313,7 @@ const MODEL = {
     "recipe_293": { base_cost0_num: 5, base_cost0_den: 1 }, // ろうそく_木工作業台
     "recipe_294": { base_cost0_num: 5, base_cost0_den: 1 }, // 竹のろうそく_木工作業台
     "recipe_295": { base_cost0_num: 5, base_cost0_den: 1 }, // 枝_大工作業台
-    "recipe_296": { base_cost0_num: 2, base_cost0_den: 1 }, // 炊いた米(お米8+薪1+水1)_炊飯樽
+    "recipe_296": { base_cost0_num: 2, base_cost0_den: 1 }, // 炊いた米(お米 x8 + 薪 x1 + 水 x1)_炊飯樽
   },
   categories: {
     "meals": {
@@ -338,9 +338,9 @@ const MODEL = {
         "meals_018": { displayName: { ja: "台所の調理場", en: "Kitchen Cooking Station" }, recipe: "recipe_110", recipeLabel: { ja: "調理した魚", en: "Cooked Fish" }, facility_multiplier: 1, item_value: 9 },
         "meals_019": { displayName: { ja: "囲炉裏と調理鍋の仕事場", en: "Sunken Hearth with Cooking Pot Workplace" }, recipe: "recipe_111", recipeLabel: { ja: "調理した魚", en: "Cooked Fish" }, facility_multiplier: 1, item_value: 9 },
         "meals_020": { displayName: { ja: "囲炉裏の仕事場", en: "Sunken Hearth Workplace" }, recipe: "recipe_112", recipeLabel: { ja: "調理した魚", en: "Cooked Fish" }, facility_multiplier: 1, item_value: 9 },
-        "meals_021": { displayName: { ja: "酒場の調理場", en: "Tavern Cooking Station" }, recipe: "recipe_113", recipeLabel: { ja: "炊いた米(お米10+水1)", en: "Cooked Rice (Rice x10 + Water x1)" }, facility_multiplier: 1, item_value: 24 },
-        "meals_022": { displayName: { ja: "台所の調理場", en: "Kitchen Cooking Station" }, recipe: "recipe_114", recipeLabel: { ja: "炊いた米(お米10+水1)", en: "Cooked Rice (Rice x10 + Water x1)" }, facility_multiplier: 1, item_value: 24 },
-        "meals_023": { displayName: { ja: "囲炉裏と調理鍋の仕事場", en: "Sunken Hearth with Cooking Pot Workplace" }, recipe: "recipe_115", recipeLabel: { ja: "炊いた米(お米10+水1)", en: "Cooked Rice (Rice x10 + Water x1)" }, facility_multiplier: 1, item_value: 24 },
+        "meals_021": { displayName: { ja: "酒場の調理場", en: "Tavern Cooking Station" }, recipe: "recipe_113", recipeLabel: { ja: "炊いた米(お米 x10 + 水 x1)", en: "Cooked Rice (Rice x10 + Water x1)" }, facility_multiplier: 1, item_value: 24 },
+        "meals_022": { displayName: { ja: "台所の調理場", en: "Kitchen Cooking Station" }, recipe: "recipe_114", recipeLabel: { ja: "炊いた米(お米 x10 + 水 x1)", en: "Cooked Rice (Rice x10 + Water x1)" }, facility_multiplier: 1, item_value: 24 },
+        "meals_023": { displayName: { ja: "囲炉裏と調理鍋の仕事場", en: "Sunken Hearth with Cooking Pot Workplace" }, recipe: "recipe_115", recipeLabel: { ja: "炊いた米(お米 x10 + 水 x1)", en: "Cooked Rice (Rice x10 + Water x1)" }, facility_multiplier: 1, item_value: 24 },
         "meals_024": { displayName: { ja: "酒場の調理場", en: "Tavern Cooking Station" }, recipe: "recipe_116", recipeLabel: { ja: "干し果実", en: "Dried Fruit" }, facility_multiplier: 1, item_value: 7 },
         "meals_025": { displayName: { ja: "台所の調理場", en: "Kitchen Cooking Station" }, recipe: "recipe_117", recipeLabel: { ja: "干し果実", en: "Dried Fruit" }, facility_multiplier: 1, item_value: 7 },
         "meals_026": { displayName: { ja: "囲炉裏と調理鍋の仕事場", en: "Sunken Hearth with Cooking Pot Workplace" }, recipe: "recipe_118", recipeLabel: { ja: "干し果実", en: "Dried Fruit" }, facility_multiplier: 1, item_value: 7 },
@@ -375,73 +375,73 @@ const MODEL = {
         "meals_055": { displayName: { ja: "台所の調理場", en: "Kitchen Cooking Station" }, recipe: "recipe_147", recipeLabel: { ja: "具沢山味噌汁", en: "Miso Stew" }, facility_multiplier: 1, item_value: 90 },
         "meals_056": { displayName: { ja: "酒場の調理場", en: "Tavern Cooking Station" }, recipe: "recipe_148", recipeLabel: { ja: "鍋", en: "Nabe" }, facility_multiplier: 1, item_value: 95 },
         "meals_057": { displayName: { ja: "台所の調理場", en: "Kitchen Cooking Station" }, recipe: "recipe_149", recipeLabel: { ja: "鍋", en: "Nabe" }, facility_multiplier: 1, item_value: 95 },
-        "meals_058": { displayName: { ja: "酒場の調理場", en: "Tavern Cooking Station" }, recipe: "recipe_150", recipeLabel: { ja: "質素な魚料理(魚1+豆全般5)", en: "Simple Fish Meal (Fish x1 + Any Beans x5)" }, facility_multiplier: 1, item_value: 26 },
-        "meals_059": { displayName: { ja: "台所の調理場", en: "Kitchen Cooking Station" }, recipe: "recipe_151", recipeLabel: { ja: "質素な魚料理(魚1+豆全般5)", en: "Simple Fish Meal (Fish x1 + Any Beans x5)" }, facility_multiplier: 1, item_value: 26 },
-        "meals_060": { displayName: { ja: "囲炉裏と調理鍋の仕事場", en: "Sunken Hearth with Cooking Pot Workplace" }, recipe: "recipe_152", recipeLabel: { ja: "質素な魚料理(魚1+豆全般5)", en: "Simple Fish Meal (Fish x1 + Any Beans x5)" }, facility_multiplier: 1, item_value: 26 },
-        "meals_061": { displayName: { ja: "酒場の調理場", en: "Tavern Cooking Station" }, recipe: "recipe_153", recipeLabel: { ja: "質素な魚料理(魚1+食用キノコ全般1)", en: "Simple Fish Meal (Fish x1 + Any Edible Mushroom x1)" }, facility_multiplier: 1, item_value: 26 },
-        "meals_062": { displayName: { ja: "台所の調理場", en: "Kitchen Cooking Station" }, recipe: "recipe_154", recipeLabel: { ja: "質素な魚料理(魚1+食用キノコ全般1)", en: "Simple Fish Meal (Fish x1 + Any Edible Mushroom x1)" }, facility_multiplier: 1, item_value: 26 },
-        "meals_063": { displayName: { ja: "囲炉裏と調理鍋の仕事場", en: "Sunken Hearth with Cooking Pot Workplace" }, recipe: "recipe_155", recipeLabel: { ja: "質素な魚料理(魚1+食用キノコ全般1)", en: "Simple Fish Meal (Fish x1 + Any Edible Mushroom x1)" }, facility_multiplier: 1, item_value: 26 },
-        "meals_064": { displayName: { ja: "酒場の調理場", en: "Tavern Cooking Station" }, recipe: "recipe_156", recipeLabel: { ja: "きちんとした魚料理(魚2+薬草全般3+穀物全般1)", en: "Solid Fish Meal (Fish x2 + Any Herbs x3 + Any Cereal x1)" }, facility_multiplier: 1, item_value: 51 },
-        "meals_065": { displayName: { ja: "台所の調理場", en: "Kitchen Cooking Station" }, recipe: "recipe_157", recipeLabel: { ja: "きちんとした魚料理(魚2+薬草全般3+穀物全般1)", en: "Solid Fish Meal (Fish x2 + Any Herbs x3 + Any Cereal x1)" }, facility_multiplier: 1, item_value: 51 },
-        "meals_066": { displayName: { ja: "囲炉裏と調理鍋の仕事場", en: "Sunken Hearth with Cooking Pot Workplace" }, recipe: "recipe_158", recipeLabel: { ja: "きちんとした魚料理(魚2+薬草全般3+穀物全般1)", en: "Solid Fish Meal (Fish x2 + Any Herbs x3 + Any Cereal x1)" }, facility_multiplier: 1, item_value: 51 },
-        "meals_067": { displayName: { ja: "酒場の調理場", en: "Tavern Cooking Station" }, recipe: "recipe_159", recipeLabel: { ja: "きちんとした魚料理(魚1+薬草全般4+食用キノコ全般1)", en: "Solid Fish Meal (Fish x1 + Any Herbs x4 + Any Edible Mushroom x1)" }, facility_multiplier: 1, item_value: 51 },
-        "meals_068": { displayName: { ja: "台所の調理場", en: "Kitchen Cooking Station" }, recipe: "recipe_160", recipeLabel: { ja: "きちんとした魚料理(魚1+薬草全般4+食用キノコ全般1)", en: "Solid Fish Meal (Fish x1 + Any Herbs x4 + Any Edible Mushroom x1)" }, facility_multiplier: 1, item_value: 51 },
-        "meals_069": { displayName: { ja: "囲炉裏と調理鍋の仕事場", en: "Sunken Hearth with Cooking Pot Workplace" }, recipe: "recipe_161", recipeLabel: { ja: "きちんとした魚料理(魚1+薬草全般4+食用キノコ全般1)", en: "Solid Fish Meal (Fish x1 + Any Herbs x4 + Any Edible Mushroom x1)" }, facility_multiplier: 1, item_value: 51 },
-        "meals_070": { displayName: { ja: "酒場の調理場", en: "Tavern Cooking Station" }, recipe: "recipe_162", recipeLabel: { ja: "豪華な魚料理(魚1+穀物全般5+豆全般10)", en: "Excellent Fish Meal (Fish x1 + Any Cereal x5 + Any Beans x10)" }, facility_multiplier: 1, item_value: 70 },
-        "meals_071": { displayName: { ja: "酒場の調理場", en: "Tavern Cooking Station" }, recipe: "recipe_163", recipeLabel: { ja: "豪華な魚料理(魚2+お米7+薬草全般2)", en: "Excellent Fish Meal (Fish x2 + Rice x7 + Any Herbs x2)" }, facility_multiplier: 1, item_value: 70 },
+        "meals_058": { displayName: { ja: "酒場の調理場", en: "Tavern Cooking Station" }, recipe: "recipe_150", recipeLabel: { ja: "質素な魚料理(魚 x1 + 豆全般 x5)", en: "Simple Fish Meal (Fish x1 + Any Beans x5)" }, facility_multiplier: 1, item_value: 26 },
+        "meals_059": { displayName: { ja: "台所の調理場", en: "Kitchen Cooking Station" }, recipe: "recipe_151", recipeLabel: { ja: "質素な魚料理(魚 x1 + 豆全般 x5)", en: "Simple Fish Meal (Fish x1 + Any Beans x5)" }, facility_multiplier: 1, item_value: 26 },
+        "meals_060": { displayName: { ja: "囲炉裏と調理鍋の仕事場", en: "Sunken Hearth with Cooking Pot Workplace" }, recipe: "recipe_152", recipeLabel: { ja: "質素な魚料理(魚 x1 + 豆全般 x5)", en: "Simple Fish Meal (Fish x1 + Any Beans x5)" }, facility_multiplier: 1, item_value: 26 },
+        "meals_061": { displayName: { ja: "酒場の調理場", en: "Tavern Cooking Station" }, recipe: "recipe_153", recipeLabel: { ja: "質素な魚料理(魚 x1 + 食用キノコ全般 x1)", en: "Simple Fish Meal (Fish x1 + Any Edible Mushroom x1)" }, facility_multiplier: 1, item_value: 26 },
+        "meals_062": { displayName: { ja: "台所の調理場", en: "Kitchen Cooking Station" }, recipe: "recipe_154", recipeLabel: { ja: "質素な魚料理(魚 x1 + 食用キノコ全般 x1)", en: "Simple Fish Meal (Fish x1 + Any Edible Mushroom x1)" }, facility_multiplier: 1, item_value: 26 },
+        "meals_063": { displayName: { ja: "囲炉裏と調理鍋の仕事場", en: "Sunken Hearth with Cooking Pot Workplace" }, recipe: "recipe_155", recipeLabel: { ja: "質素な魚料理(魚 x1 + 食用キノコ全般 x1)", en: "Simple Fish Meal (Fish x1 + Any Edible Mushroom x1)" }, facility_multiplier: 1, item_value: 26 },
+        "meals_064": { displayName: { ja: "酒場の調理場", en: "Tavern Cooking Station" }, recipe: "recipe_156", recipeLabel: { ja: "きちんとした魚料理(魚 x2 + 薬草全般 x3 + 穀物全般 x1)", en: "Solid Fish Meal (Fish x2 + Any Herbs x3 + Any Cereal x1)" }, facility_multiplier: 1, item_value: 51 },
+        "meals_065": { displayName: { ja: "台所の調理場", en: "Kitchen Cooking Station" }, recipe: "recipe_157", recipeLabel: { ja: "きちんとした魚料理(魚 x2 + 薬草全般 x3 + 穀物全般 x1)", en: "Solid Fish Meal (Fish x2 + Any Herbs x3 + Any Cereal x1)" }, facility_multiplier: 1, item_value: 51 },
+        "meals_066": { displayName: { ja: "囲炉裏と調理鍋の仕事場", en: "Sunken Hearth with Cooking Pot Workplace" }, recipe: "recipe_158", recipeLabel: { ja: "きちんとした魚料理(魚 x2 + 薬草全般 x3 + 穀物全般 x1)", en: "Solid Fish Meal (Fish x2 + Any Herbs x3 + Any Cereal x1)" }, facility_multiplier: 1, item_value: 51 },
+        "meals_067": { displayName: { ja: "酒場の調理場", en: "Tavern Cooking Station" }, recipe: "recipe_159", recipeLabel: { ja: "きちんとした魚料理(魚 x1 + 薬草全般 x4 + 食用キノコ全般 x1)", en: "Solid Fish Meal (Fish x1 + Any Herbs x4 + Any Edible Mushroom x1)" }, facility_multiplier: 1, item_value: 51 },
+        "meals_068": { displayName: { ja: "台所の調理場", en: "Kitchen Cooking Station" }, recipe: "recipe_160", recipeLabel: { ja: "きちんとした魚料理(魚 x1 + 薬草全般 x4 + 食用キノコ全般 x1)", en: "Solid Fish Meal (Fish x1 + Any Herbs x4 + Any Edible Mushroom x1)" }, facility_multiplier: 1, item_value: 51 },
+        "meals_069": { displayName: { ja: "囲炉裏と調理鍋の仕事場", en: "Sunken Hearth with Cooking Pot Workplace" }, recipe: "recipe_161", recipeLabel: { ja: "きちんとした魚料理(魚 x1 + 薬草全般 x4 + 食用キノコ全般 x1)", en: "Solid Fish Meal (Fish x1 + Any Herbs x4 + Any Edible Mushroom x1)" }, facility_multiplier: 1, item_value: 51 },
+        "meals_070": { displayName: { ja: "酒場の調理場", en: "Tavern Cooking Station" }, recipe: "recipe_162", recipeLabel: { ja: "豪華な魚料理(魚 x1 + 穀物全般 x5 + 豆全般 x10)", en: "Excellent Fish Meal (Fish x1 + Any Cereal x5 + Any Beans x10)" }, facility_multiplier: 1, item_value: 70 },
+        "meals_071": { displayName: { ja: "酒場の調理場", en: "Tavern Cooking Station" }, recipe: "recipe_163", recipeLabel: { ja: "豪華な魚料理(魚 x2 + お米 x7 + 薬草全般 x2)", en: "Excellent Fish Meal (Fish x2 + Rice x7 + Any Herbs x2)" }, facility_multiplier: 1, item_value: 70 },
         "meals_072": { displayName: { ja: "酒場の調理場", en: "Tavern Cooking Station" }, recipe: "recipe_164", recipeLabel: { ja: "なれずし", en: "Narezushi" }, facility_multiplier: 1, item_value: 54 },
         "meals_073": { displayName: { ja: "台所の調理場", en: "Kitchen Cooking Station" }, recipe: "recipe_165", recipeLabel: { ja: "なれずし", en: "Narezushi" }, facility_multiplier: 1, item_value: 54 },
-        "meals_074": { displayName: { ja: "酒場の調理場", en: "Tavern Cooking Station" }, recipe: "recipe_166", recipeLabel: { ja: "質素な肉料理(生肉1+穀物全般6)", en: "Simple Meat Meal (Meat x1 + Any Cereal x6)" }, facility_multiplier: 1, item_value: 25 },
-        "meals_075": { displayName: { ja: "台所の調理場", en: "Kitchen Cooking Station" }, recipe: "recipe_167", recipeLabel: { ja: "質素な肉料理(生肉1+穀物全般6)", en: "Simple Meat Meal (Meat x1 + Any Cereal x6)" }, facility_multiplier: 1, item_value: 25 },
-        "meals_076": { displayName: { ja: "囲炉裏と調理鍋の仕事場", en: "Sunken Hearth with Cooking Pot Workplace" }, recipe: "recipe_168", recipeLabel: { ja: "質素な肉料理(生肉1+穀物全般6)", en: "Simple Meat Meal (Meat x1 + Any Cereal x6)" }, facility_multiplier: 1, item_value: 25 },
-        "meals_077": { displayName: { ja: "酒場の調理場", en: "Tavern Cooking Station" }, recipe: "recipe_169", recipeLabel: { ja: "質素な肉料理(生肉1+食用キノコ全般1)", en: "Simple Meat Meal (Meat x1 + Any Edible Mushroom x1)" }, facility_multiplier: 1, item_value: 25 },
-        "meals_078": { displayName: { ja: "台所の調理場", en: "Kitchen Cooking Station" }, recipe: "recipe_170", recipeLabel: { ja: "質素な肉料理(生肉1+食用キノコ全般1)", en: "Simple Meat Meal (Meat x1 + Any Edible Mushroom x1)" }, facility_multiplier: 1, item_value: 25 },
-        "meals_079": { displayName: { ja: "囲炉裏と調理鍋の仕事場", en: "Sunken Hearth with Cooking Pot Workplace" }, recipe: "recipe_171", recipeLabel: { ja: "質素な肉料理(生肉1+食用キノコ全般1)", en: "Simple Meat Meal (Meat x1 + Any Edible Mushroom x1)" }, facility_multiplier: 1, item_value: 25 },
-        "meals_080": { displayName: { ja: "酒場の調理場", en: "Tavern Cooking Station" }, recipe: "recipe_172", recipeLabel: { ja: "質素な肉料理(生肉1+豆全般5)", en: "Simple Meat Meal (Meat x1 + Any Beans x5)" }, facility_multiplier: 1, item_value: 25 },
-        "meals_081": { displayName: { ja: "台所の調理場", en: "Kitchen Cooking Station" }, recipe: "recipe_173", recipeLabel: { ja: "質素な肉料理(生肉1+豆全般5)", en: "Simple Meat Meal (Meat x1 + Any Beans x5)" }, facility_multiplier: 1, item_value: 25 },
-        "meals_082": { displayName: { ja: "囲炉裏と調理鍋の仕事場", en: "Sunken Hearth with Cooking Pot Workplace" }, recipe: "recipe_174", recipeLabel: { ja: "質素な肉料理(生肉1+豆全般5)", en: "Simple Meat Meal (Meat x1 + Any Beans x5)" }, facility_multiplier: 1, item_value: 25 },
-        "meals_083": { displayName: { ja: "酒場の調理場", en: "Tavern Cooking Station" }, recipe: "recipe_175", recipeLabel: { ja: "きちんとした肉料理(生肉1+卵1+豆全般6)", en: "Solid Meat Meal (Meat x1 + Egg x1 + Any Beans x6)" }, facility_multiplier: 1, item_value: 52 },
-        "meals_084": { displayName: { ja: "台所の調理場", en: "Kitchen Cooking Station" }, recipe: "recipe_176", recipeLabel: { ja: "きちんとした肉料理(生肉1+卵1+豆全般6)", en: "Solid Meat Meal (Meat x1 + Egg x1 + Any Beans x6)" }, facility_multiplier: 1, item_value: 52 },
-        "meals_085": { displayName: { ja: "囲炉裏と調理鍋の仕事場", en: "Sunken Hearth with Cooking Pot Workplace" }, recipe: "recipe_177", recipeLabel: { ja: "きちんとした肉料理(生肉1+卵1+豆全般6)", en: "Solid Meat Meal (Meat x1 + Egg x1 + Any Beans x6)" }, facility_multiplier: 1, item_value: 52 },
-        "meals_086": { displayName: { ja: "酒場の調理場", en: "Tavern Cooking Station" }, recipe: "recipe_178", recipeLabel: { ja: "きちんとした肉料理(生肉2+薬草全般2+穀物全般1)", en: "Solid Meat Meal (Meat x2 + Any Herbs x2 + Any Cereal x1)" }, facility_multiplier: 1, item_value: 52 },
-        "meals_087": { displayName: { ja: "台所の調理場", en: "Kitchen Cooking Station" }, recipe: "recipe_179", recipeLabel: { ja: "きちんとした肉料理(生肉2+薬草全般2+穀物全般1)", en: "Solid Meat Meal (Meat x2 + Any Herbs x2 + Any Cereal x1)" }, facility_multiplier: 1, item_value: 52 },
-        "meals_088": { displayName: { ja: "囲炉裏と調理鍋の仕事場", en: "Sunken Hearth with Cooking Pot Workplace" }, recipe: "recipe_180", recipeLabel: { ja: "きちんとした肉料理(生肉2+薬草全般2+穀物全般1)", en: "Solid Meat Meal (Meat x2 + Any Herbs x2 + Any Cereal x1)" }, facility_multiplier: 1, item_value: 52 },
-        "meals_089": { displayName: { ja: "酒場の調理場", en: "Tavern Cooking Station" }, recipe: "recipe_181", recipeLabel: { ja: "きちんとした肉料理(生肉1+薬草全般4+食用キノコ全般6)", en: "Solid Meat Meal (Meat x1 + Any Herbs x4 + Any Edible Mushroom x6)" }, facility_multiplier: 1, item_value: 52 },
-        "meals_090": { displayName: { ja: "台所の調理場", en: "Kitchen Cooking Station" }, recipe: "recipe_182", recipeLabel: { ja: "きちんとした肉料理(生肉1+薬草全般4+食用キノコ全般6)", en: "Solid Meat Meal (Meat x1 + Any Herbs x4 + Any Edible Mushroom x6)" }, facility_multiplier: 1, item_value: 52 },
-        "meals_091": { displayName: { ja: "囲炉裏と調理鍋の仕事場", en: "Sunken Hearth with Cooking Pot Workplace" }, recipe: "recipe_183", recipeLabel: { ja: "きちんとした肉料理(生肉1+薬草全般4+食用キノコ全般6)", en: "Solid Meat Meal (Meat x1 + Any Herbs x4 + Any Edible Mushroom x6)" }, facility_multiplier: 1, item_value: 52 },
-        "meals_092": { displayName: { ja: "酒場の調理場", en: "Tavern Cooking Station" }, recipe: "recipe_184", recipeLabel: { ja: "豪華な肉料理(生肉2+穀物全般4+豆全般4)", en: "Excellent Meat Meal (Meat x2 + Any Cereal x4 + Any Beans x4)" }, facility_multiplier: 1, item_value: 72 },
-        "meals_093": { displayName: { ja: "酒場の調理場", en: "Tavern Cooking Station" }, recipe: "recipe_185", recipeLabel: { ja: "豪華な肉料理(生肉2+お米5+薬草全般3)", en: "Excellent Meat Meal (Meat x2 + Rice x5 + Any Herbs x3)" }, facility_multiplier: 1, item_value: 72 },
-        "meals_094": { displayName: { ja: "酒場の調理場", en: "Tavern Cooking Station" }, recipe: "recipe_186", recipeLabel: { ja: "豪華な肉料理(生肉1+お米4+食用キノコ全般2)", en: "Excellent Meat Meal (Meat x1 + Rice x4 + Any Edible Mushroom x2)" }, facility_multiplier: 1, item_value: 72 },
+        "meals_074": { displayName: { ja: "酒場の調理場", en: "Tavern Cooking Station" }, recipe: "recipe_166", recipeLabel: { ja: "質素な肉料理(生肉 x1 + 穀物全般 x6)", en: "Simple Meat Meal (Meat x1 + Any Cereal x6)" }, facility_multiplier: 1, item_value: 25 },
+        "meals_075": { displayName: { ja: "台所の調理場", en: "Kitchen Cooking Station" }, recipe: "recipe_167", recipeLabel: { ja: "質素な肉料理(生肉 x1 + 穀物全般 x6)", en: "Simple Meat Meal (Meat x1 + Any Cereal x6)" }, facility_multiplier: 1, item_value: 25 },
+        "meals_076": { displayName: { ja: "囲炉裏と調理鍋の仕事場", en: "Sunken Hearth with Cooking Pot Workplace" }, recipe: "recipe_168", recipeLabel: { ja: "質素な肉料理(生肉 x1 + 穀物全般 x6)", en: "Simple Meat Meal (Meat x1 + Any Cereal x6)" }, facility_multiplier: 1, item_value: 25 },
+        "meals_077": { displayName: { ja: "酒場の調理場", en: "Tavern Cooking Station" }, recipe: "recipe_169", recipeLabel: { ja: "質素な肉料理(生肉 x1 + 食用キノコ全般 x1)", en: "Simple Meat Meal (Meat x1 + Any Edible Mushroom x1)" }, facility_multiplier: 1, item_value: 25 },
+        "meals_078": { displayName: { ja: "台所の調理場", en: "Kitchen Cooking Station" }, recipe: "recipe_170", recipeLabel: { ja: "質素な肉料理(生肉 x1 + 食用キノコ全般 x1)", en: "Simple Meat Meal (Meat x1 + Any Edible Mushroom x1)" }, facility_multiplier: 1, item_value: 25 },
+        "meals_079": { displayName: { ja: "囲炉裏と調理鍋の仕事場", en: "Sunken Hearth with Cooking Pot Workplace" }, recipe: "recipe_171", recipeLabel: { ja: "質素な肉料理(生肉 x1 + 食用キノコ全般 x1)", en: "Simple Meat Meal (Meat x1 + Any Edible Mushroom x1)" }, facility_multiplier: 1, item_value: 25 },
+        "meals_080": { displayName: { ja: "酒場の調理場", en: "Tavern Cooking Station" }, recipe: "recipe_172", recipeLabel: { ja: "質素な肉料理(生肉 x1 + 豆全般 x5)", en: "Simple Meat Meal (Meat x1 + Any Beans x5)" }, facility_multiplier: 1, item_value: 25 },
+        "meals_081": { displayName: { ja: "台所の調理場", en: "Kitchen Cooking Station" }, recipe: "recipe_173", recipeLabel: { ja: "質素な肉料理(生肉 x1 + 豆全般 x5)", en: "Simple Meat Meal (Meat x1 + Any Beans x5)" }, facility_multiplier: 1, item_value: 25 },
+        "meals_082": { displayName: { ja: "囲炉裏と調理鍋の仕事場", en: "Sunken Hearth with Cooking Pot Workplace" }, recipe: "recipe_174", recipeLabel: { ja: "質素な肉料理(生肉 x1 + 豆全般 x5)", en: "Simple Meat Meal (Meat x1 + Any Beans x5)" }, facility_multiplier: 1, item_value: 25 },
+        "meals_083": { displayName: { ja: "酒場の調理場", en: "Tavern Cooking Station" }, recipe: "recipe_175", recipeLabel: { ja: "きちんとした肉料理(生肉 x1 + 卵 x1 + 豆全般 x6)", en: "Solid Meat Meal (Meat x1 + Egg x1 + Any Beans x6)" }, facility_multiplier: 1, item_value: 52 },
+        "meals_084": { displayName: { ja: "台所の調理場", en: "Kitchen Cooking Station" }, recipe: "recipe_176", recipeLabel: { ja: "きちんとした肉料理(生肉 x1 + 卵 x1 + 豆全般 x6)", en: "Solid Meat Meal (Meat x1 + Egg x1 + Any Beans x6)" }, facility_multiplier: 1, item_value: 52 },
+        "meals_085": { displayName: { ja: "囲炉裏と調理鍋の仕事場", en: "Sunken Hearth with Cooking Pot Workplace" }, recipe: "recipe_177", recipeLabel: { ja: "きちんとした肉料理(生肉 x1 + 卵 x1 + 豆全般 x6)", en: "Solid Meat Meal (Meat x1 + Egg x1 + Any Beans x6)" }, facility_multiplier: 1, item_value: 52 },
+        "meals_086": { displayName: { ja: "酒場の調理場", en: "Tavern Cooking Station" }, recipe: "recipe_178", recipeLabel: { ja: "きちんとした肉料理(生肉 x2 + 薬草全般 x2 + 穀物全般 x1)", en: "Solid Meat Meal (Meat x2 + Any Herbs x2 + Any Cereal x1)" }, facility_multiplier: 1, item_value: 52 },
+        "meals_087": { displayName: { ja: "台所の調理場", en: "Kitchen Cooking Station" }, recipe: "recipe_179", recipeLabel: { ja: "きちんとした肉料理(生肉 x2 + 薬草全般 x2 + 穀物全般 x1)", en: "Solid Meat Meal (Meat x2 + Any Herbs x2 + Any Cereal x1)" }, facility_multiplier: 1, item_value: 52 },
+        "meals_088": { displayName: { ja: "囲炉裏と調理鍋の仕事場", en: "Sunken Hearth with Cooking Pot Workplace" }, recipe: "recipe_180", recipeLabel: { ja: "きちんとした肉料理(生肉 x2 + 薬草全般 x2 + 穀物全般 x1)", en: "Solid Meat Meal (Meat x2 + Any Herbs x2 + Any Cereal x1)" }, facility_multiplier: 1, item_value: 52 },
+        "meals_089": { displayName: { ja: "酒場の調理場", en: "Tavern Cooking Station" }, recipe: "recipe_181", recipeLabel: { ja: "きちんとした肉料理(生肉 x1 + 薬草全般 x4 + 食用キノコ全般 x6)", en: "Solid Meat Meal (Meat x1 + Any Herbs x4 + Any Edible Mushroom x6)" }, facility_multiplier: 1, item_value: 52 },
+        "meals_090": { displayName: { ja: "台所の調理場", en: "Kitchen Cooking Station" }, recipe: "recipe_182", recipeLabel: { ja: "きちんとした肉料理(生肉 x1 + 薬草全般 x4 + 食用キノコ全般 x6)", en: "Solid Meat Meal (Meat x1 + Any Herbs x4 + Any Edible Mushroom x6)" }, facility_multiplier: 1, item_value: 52 },
+        "meals_091": { displayName: { ja: "囲炉裏と調理鍋の仕事場", en: "Sunken Hearth with Cooking Pot Workplace" }, recipe: "recipe_183", recipeLabel: { ja: "きちんとした肉料理(生肉 x1 + 薬草全般 x4 + 食用キノコ全般 x6)", en: "Solid Meat Meal (Meat x1 + Any Herbs x4 + Any Edible Mushroom x6)" }, facility_multiplier: 1, item_value: 52 },
+        "meals_092": { displayName: { ja: "酒場の調理場", en: "Tavern Cooking Station" }, recipe: "recipe_184", recipeLabel: { ja: "豪華な肉料理(生肉 x2 + 穀物全般 x4 + 豆全般 x4)", en: "Excellent Meat Meal (Meat x2 + Any Cereal x4 + Any Beans x4)" }, facility_multiplier: 1, item_value: 72 },
+        "meals_093": { displayName: { ja: "酒場の調理場", en: "Tavern Cooking Station" }, recipe: "recipe_185", recipeLabel: { ja: "豪華な肉料理(生肉 x2 + お米 x5 + 薬草全般 x3)", en: "Excellent Meat Meal (Meat x2 + Rice x5 + Any Herbs x3)" }, facility_multiplier: 1, item_value: 72 },
+        "meals_094": { displayName: { ja: "酒場の調理場", en: "Tavern Cooking Station" }, recipe: "recipe_186", recipeLabel: { ja: "豪華な肉料理(生肉 x1 + お米 x4 + 食用キノコ全般 x2)", en: "Excellent Meat Meal (Meat x1 + Rice x4 + Any Edible Mushroom x2)" }, facility_multiplier: 1, item_value: 72 },
         "meals_095": { displayName: { ja: "酒場の調理場", en: "Tavern Cooking Station" }, recipe: "recipe_187", recipeLabel: { ja: "焼き鳥", en: "Yakitori" }, facility_multiplier: 1, item_value: 61 },
-        "meals_096": { displayName: { ja: "酒場の調理場", en: "Tavern Cooking Station" }, recipe: "recipe_188", recipeLabel: { ja: "質素な野菜料理(野菜全般5+豆全般3)", en: "Simple Vegetable Meal (Any Vegetable x5 + Any Beans x3)" }, facility_multiplier: 1, item_value: 25 },
-        "meals_097": { displayName: { ja: "酒場の調理場", en: "Tavern Cooking Station" }, recipe: "recipe_189", recipeLabel: { ja: "質素な野菜料理(野菜全般5+薬草全般3)", en: "Simple Vegetable Meal (Any Vegetable x5 + Any Herbs x3)" }, facility_multiplier: 1, item_value: 25 },
-        "meals_098": { displayName: { ja: "酒場の調理場", en: "Tavern Cooking Station" }, recipe: "recipe_190", recipeLabel: { ja: "質素な野菜料理(野菜全般4+食用キノコ全般1)", en: "Simple Vegetable Meal (Any Vegetable x4 + Any Edible Mushroom x1)" }, facility_multiplier: 1, item_value: 25 },
-        "meals_099": { displayName: { ja: "酒場の調理場", en: "Tavern Cooking Station" }, recipe: "recipe_191", recipeLabel: { ja: "きちんとした野菜料理(大豆10+麹2)", en: "Solid Vegetable Meal (Soybean x10 + Koji x2)" }, facility_multiplier: 1, item_value: 50 },
-        "meals_100": { displayName: { ja: "酒場の調理場", en: "Tavern Cooking Station" }, recipe: "recipe_192", recipeLabel: { ja: "きちんとした野菜料理(水1+穀物全般6+果実全般3)", en: "Solid Vegetable Meal (Water x1 + Any Cereal x6 + Any Fruits x3)" }, facility_multiplier: 1, item_value: 50 },
-        "meals_101": { displayName: { ja: "酒場の調理場", en: "Tavern Cooking Station" }, recipe: "recipe_193", recipeLabel: { ja: "きちんとした野菜料理(水1+豆全般6+薬草全般3)", en: "Solid Vegetable Meal (Water x1 + Any Beans x6 + Any Herbs x3)" }, facility_multiplier: 1, item_value: 50 },
-        "meals_102": { displayName: { ja: "酒場の調理場", en: "Tavern Cooking Station" }, recipe: "recipe_194", recipeLabel: { ja: "豪華な野菜料理(穀物全般7+油1+水1+サトイモ8)", en: "Excellent Vegetable Meal (Any Cereal x7 + Oil x1 + Water x1 + Taro x8)" }, facility_multiplier: 1, item_value: 71 },
-        "meals_103": { displayName: { ja: "酒場の調理場", en: "Tavern Cooking Station" }, recipe: "recipe_195", recipeLabel: { ja: "豪華な野菜料理(お米12+しいたけ2+ネギ5+油1)", en: "Excellent Vegetable Meal (Rice x12 + Shiitake x2 + Leek x5 + Oil x1)" }, facility_multiplier: 1, item_value: 71 },
-        "meals_104": { displayName: { ja: "酒場の調理場", en: "Tavern Cooking Station" }, recipe: "recipe_196", recipeLabel: { ja: "豪華な野菜料理(小麦7+野菜全般8+わさび3+油1)", en: "Excellent Vegetable Meal (Wheat x7 + Any Vegetable x8 + Wasabi x3 + Oil x1)" }, facility_multiplier: 1, item_value: 71 },
+        "meals_096": { displayName: { ja: "酒場の調理場", en: "Tavern Cooking Station" }, recipe: "recipe_188", recipeLabel: { ja: "質素な野菜料理(野菜全般 x5 + 豆全般 x3)", en: "Simple Vegetable Meal (Any Vegetable x5 + Any Beans x3)" }, facility_multiplier: 1, item_value: 25 },
+        "meals_097": { displayName: { ja: "酒場の調理場", en: "Tavern Cooking Station" }, recipe: "recipe_189", recipeLabel: { ja: "質素な野菜料理(野菜全般 x5 + 薬草全般 x3)", en: "Simple Vegetable Meal (Any Vegetable x5 + Any Herbs x3)" }, facility_multiplier: 1, item_value: 25 },
+        "meals_098": { displayName: { ja: "酒場の調理場", en: "Tavern Cooking Station" }, recipe: "recipe_190", recipeLabel: { ja: "質素な野菜料理(野菜全般 x4 + 食用キノコ全般 x1)", en: "Simple Vegetable Meal (Any Vegetable x4 + Any Edible Mushroom x1)" }, facility_multiplier: 1, item_value: 25 },
+        "meals_099": { displayName: { ja: "酒場の調理場", en: "Tavern Cooking Station" }, recipe: "recipe_191", recipeLabel: { ja: "きちんとした野菜料理(大豆 x10 + 麹 x2)", en: "Solid Vegetable Meal (Soybean x10 + Koji x2)" }, facility_multiplier: 1, item_value: 50 },
+        "meals_100": { displayName: { ja: "酒場の調理場", en: "Tavern Cooking Station" }, recipe: "recipe_192", recipeLabel: { ja: "きちんとした野菜料理(水 x1 + 穀物全般 x6 + 果実全般 x3)", en: "Solid Vegetable Meal (Water x1 + Any Cereal x6 + Any Fruits x3)" }, facility_multiplier: 1, item_value: 50 },
+        "meals_101": { displayName: { ja: "酒場の調理場", en: "Tavern Cooking Station" }, recipe: "recipe_193", recipeLabel: { ja: "きちんとした野菜料理(水 x1 + 豆全般 x6 + 薬草全般 x3)", en: "Solid Vegetable Meal (Water x1 + Any Beans x6 + Any Herbs x3)" }, facility_multiplier: 1, item_value: 50 },
+        "meals_102": { displayName: { ja: "酒場の調理場", en: "Tavern Cooking Station" }, recipe: "recipe_194", recipeLabel: { ja: "豪華な野菜料理(穀物全般 x7 + 油 x1 + 水 x1 + サトイモ x8)", en: "Excellent Vegetable Meal (Any Cereal x7 + Oil x1 + Water x1 + Taro x8)" }, facility_multiplier: 1, item_value: 71 },
+        "meals_103": { displayName: { ja: "酒場の調理場", en: "Tavern Cooking Station" }, recipe: "recipe_195", recipeLabel: { ja: "豪華な野菜料理(お米 x12 + しいたけ x2 + ネギ x5 + 油 x1)", en: "Excellent Vegetable Meal (Rice x12 + Shiitake x2 + Leek x5 + Oil x1)" }, facility_multiplier: 1, item_value: 71 },
+        "meals_104": { displayName: { ja: "酒場の調理場", en: "Tavern Cooking Station" }, recipe: "recipe_196", recipeLabel: { ja: "豪華な野菜料理(小麦 x7 + 野菜全般 x8 + わさび x3 + 油 x1)", en: "Excellent Vegetable Meal (Wheat x7 + Any Vegetable x8 + Wasabi x3 + Oil x1)" }, facility_multiplier: 1, item_value: 71 },
         "meals_105": { displayName: { ja: "酒場の調理場", en: "Tavern Cooking Station" }, recipe: "recipe_197", recipeLabel: { ja: "豆腐", en: "Tofu" }, facility_multiplier: 1, item_value: 28 },
         "meals_106": { displayName: { ja: "酒場の調理場", en: "Tavern Cooking Station" }, recipe: "recipe_198", recipeLabel: { ja: "田楽", en: "Dengaku" }, facility_multiplier: 1, item_value: 60 },
         "meals_107": { displayName: { ja: "台所の調理場", en: "Kitchen Cooking Station" }, recipe: "recipe_199", recipeLabel: { ja: "田楽", en: "Dengaku" }, facility_multiplier: 1, item_value: 60 },
         "meals_108": { displayName: { ja: "台所の調理場", en: "Kitchen Cooking Station" }, recipe: "recipe_200", recipeLabel: { ja: "焼き鳥", en: "Yakitori" }, facility_multiplier: 1, item_value: 61 },
         "meals_109": { displayName: { ja: "台所の調理場", en: "Kitchen Cooking Station" }, recipe: "recipe_201", recipeLabel: { ja: "味噌", en: "Miso" }, facility_multiplier: 1, item_value: 29 },
         "meals_110": { displayName: { ja: "台所の調理場", en: "Kitchen Cooking Station" }, recipe: "recipe_202", recipeLabel: { ja: "豆腐", en: "Tofu" }, facility_multiplier: 1, item_value: 28 },
-        "meals_111": { displayName: { ja: "台所の調理場", en: "Kitchen Cooking Station" }, recipe: "recipe_203", recipeLabel: { ja: "質素な野菜料理(野菜全般5+豆全般3)", en: "Simple Vegetable Meal (Any Vegetable x5 + Any Beans x3)" }, facility_multiplier: 1, item_value: 25 },
-        "meals_112": { displayName: { ja: "囲炉裏と調理鍋の仕事場", en: "Sunken Hearth with Cooking Pot Workplace" }, recipe: "recipe_204", recipeLabel: { ja: "質素な野菜料理(野菜全般5+豆全般3)", en: "Simple Vegetable Meal (Any Vegetable x5 + Any Beans x3)" }, facility_multiplier: 1, item_value: 25 },
-        "meals_113": { displayName: { ja: "囲炉裏の仕事場", en: "Sunken Hearth Workplace" }, recipe: "recipe_205", recipeLabel: { ja: "質素な野菜料理(野菜全般5+豆全般3)", en: "Simple Vegetable Meal (Any Vegetable x5 + Any Beans x3)" }, facility_multiplier: 1, item_value: 25 },
-        "meals_114": { displayName: { ja: "台所の調理場", en: "Kitchen Cooking Station" }, recipe: "recipe_206", recipeLabel: { ja: "質素な野菜料理(野菜全般5+薬草全般3)", en: "Simple Vegetable Meal (Any Vegetable x5 + Any Herbs x3)" }, facility_multiplier: 1, item_value: 25 },
-        "meals_115": { displayName: { ja: "囲炉裏と調理鍋の仕事場", en: "Sunken Hearth with Cooking Pot Workplace" }, recipe: "recipe_207", recipeLabel: { ja: "質素な野菜料理(野菜全般5+薬草全般3)", en: "Simple Vegetable Meal (Any Vegetable x5 + Any Herbs x3)" }, facility_multiplier: 1, item_value: 25 },
-        "meals_116": { displayName: { ja: "囲炉裏の仕事場", en: "Sunken Hearth Workplace" }, recipe: "recipe_208", recipeLabel: { ja: "質素な野菜料理(野菜全般5+薬草全般3)", en: "Simple Vegetable Meal (Any Vegetable x5 + Any Herbs x3)" }, facility_multiplier: 1, item_value: 25 },
-        "meals_117": { displayName: { ja: "台所の調理場", en: "Kitchen Cooking Station" }, recipe: "recipe_209", recipeLabel: { ja: "質素な野菜料理(野菜全般4+食用キノコ全般1)", en: "Simple Vegetable Meal (Any Vegetable x4 + Any Edible Mushroom x1)" }, facility_multiplier: 1, item_value: 25 },
-        "meals_118": { displayName: { ja: "囲炉裏と調理鍋の仕事場", en: "Sunken Hearth with Cooking Pot Workplace" }, recipe: "recipe_210", recipeLabel: { ja: "質素な野菜料理(野菜全般4+食用キノコ全般1)", en: "Simple Vegetable Meal (Any Vegetable x4 + Any Edible Mushroom x1)" }, facility_multiplier: 1, item_value: 25 },
-        "meals_119": { displayName: { ja: "台所の調理場", en: "Kitchen Cooking Station" }, recipe: "recipe_211", recipeLabel: { ja: "きちんとした野菜料理(大豆10+麹2)", en: "Solid Vegetable Meal (Soybean x10 + Koji x2)" }, facility_multiplier: 1, item_value: 50 },
-        "meals_120": { displayName: { ja: "囲炉裏と調理鍋の仕事場", en: "Sunken Hearth with Cooking Pot Workplace" }, recipe: "recipe_212", recipeLabel: { ja: "きちんとした野菜料理(大豆10+麹2)", en: "Solid Vegetable Meal (Soybean x10 + Koji x2)" }, facility_multiplier: 1, item_value: 50 },
-        "meals_121": { displayName: { ja: "台所の調理場", en: "Kitchen Cooking Station" }, recipe: "recipe_213", recipeLabel: { ja: "きちんとした野菜料理(水1+穀物全般6+果実全般3)", en: "Solid Vegetable Meal (Water x1 + Any Cereal x6 + Any Fruits x3)" }, facility_multiplier: 1, item_value: 50 },
-        "meals_122": { displayName: { ja: "囲炉裏と調理鍋の仕事場", en: "Sunken Hearth with Cooking Pot Workplace" }, recipe: "recipe_214", recipeLabel: { ja: "きちんとした野菜料理(水1+穀物全般6+果実全般3)", en: "Solid Vegetable Meal (Water x1 + Any Cereal x6 + Any Fruits x3)" }, facility_multiplier: 1, item_value: 50 },
-        "meals_123": { displayName: { ja: "台所の調理場", en: "Kitchen Cooking Station" }, recipe: "recipe_215", recipeLabel: { ja: "きちんとした野菜料理(水1+豆全般6+薬草全般3)", en: "Solid Vegetable Meal (Water x1 + Any Beans x6 + Any Herbs x3)" }, facility_multiplier: 1, item_value: 50 },
-        "meals_124": { displayName: { ja: "囲炉裏と調理鍋の仕事場", en: "Sunken Hearth with Cooking Pot Workplace" }, recipe: "recipe_216", recipeLabel: { ja: "きちんとした野菜料理(水1+豆全般6+薬草全般3)", en: "Solid Vegetable Meal (Water x1 + Any Beans x6 + Any Herbs x3)" }, facility_multiplier: 1, item_value: 50 },
+        "meals_111": { displayName: { ja: "台所の調理場", en: "Kitchen Cooking Station" }, recipe: "recipe_203", recipeLabel: { ja: "質素な野菜料理(野菜全般 x5 + 豆全般 x3)", en: "Simple Vegetable Meal (Any Vegetable x5 + Any Beans x3)" }, facility_multiplier: 1, item_value: 25 },
+        "meals_112": { displayName: { ja: "囲炉裏と調理鍋の仕事場", en: "Sunken Hearth with Cooking Pot Workplace" }, recipe: "recipe_204", recipeLabel: { ja: "質素な野菜料理(野菜全般 x5 + 豆全般 x3)", en: "Simple Vegetable Meal (Any Vegetable x5 + Any Beans x3)" }, facility_multiplier: 1, item_value: 25 },
+        "meals_113": { displayName: { ja: "囲炉裏の仕事場", en: "Sunken Hearth Workplace" }, recipe: "recipe_205", recipeLabel: { ja: "質素な野菜料理(野菜全般 x5 + 豆全般 x3)", en: "Simple Vegetable Meal (Any Vegetable x5 + Any Beans x3)" }, facility_multiplier: 1, item_value: 25 },
+        "meals_114": { displayName: { ja: "台所の調理場", en: "Kitchen Cooking Station" }, recipe: "recipe_206", recipeLabel: { ja: "質素な野菜料理(野菜全般 x5 + 薬草全般 x3)", en: "Simple Vegetable Meal (Any Vegetable x5 + Any Herbs x3)" }, facility_multiplier: 1, item_value: 25 },
+        "meals_115": { displayName: { ja: "囲炉裏と調理鍋の仕事場", en: "Sunken Hearth with Cooking Pot Workplace" }, recipe: "recipe_207", recipeLabel: { ja: "質素な野菜料理(野菜全般 x5 + 薬草全般 x3)", en: "Simple Vegetable Meal (Any Vegetable x5 + Any Herbs x3)" }, facility_multiplier: 1, item_value: 25 },
+        "meals_116": { displayName: { ja: "囲炉裏の仕事場", en: "Sunken Hearth Workplace" }, recipe: "recipe_208", recipeLabel: { ja: "質素な野菜料理(野菜全般 x5 + 薬草全般 x3)", en: "Simple Vegetable Meal (Any Vegetable x5 + Any Herbs x3)" }, facility_multiplier: 1, item_value: 25 },
+        "meals_117": { displayName: { ja: "台所の調理場", en: "Kitchen Cooking Station" }, recipe: "recipe_209", recipeLabel: { ja: "質素な野菜料理(野菜全般 x4 + 食用キノコ全般 x1)", en: "Simple Vegetable Meal (Any Vegetable x4 + Any Edible Mushroom x1)" }, facility_multiplier: 1, item_value: 25 },
+        "meals_118": { displayName: { ja: "囲炉裏と調理鍋の仕事場", en: "Sunken Hearth with Cooking Pot Workplace" }, recipe: "recipe_210", recipeLabel: { ja: "質素な野菜料理(野菜全般 x4 + 食用キノコ全般 x1)", en: "Simple Vegetable Meal (Any Vegetable x4 + Any Edible Mushroom x1)" }, facility_multiplier: 1, item_value: 25 },
+        "meals_119": { displayName: { ja: "台所の調理場", en: "Kitchen Cooking Station" }, recipe: "recipe_211", recipeLabel: { ja: "きちんとした野菜料理(大豆 x10 + 麹 x2)", en: "Solid Vegetable Meal (Soybean x10 + Koji x2)" }, facility_multiplier: 1, item_value: 50 },
+        "meals_120": { displayName: { ja: "囲炉裏と調理鍋の仕事場", en: "Sunken Hearth with Cooking Pot Workplace" }, recipe: "recipe_212", recipeLabel: { ja: "きちんとした野菜料理(大豆 x10 + 麹 x2)", en: "Solid Vegetable Meal (Soybean x10 + Koji x2)" }, facility_multiplier: 1, item_value: 50 },
+        "meals_121": { displayName: { ja: "台所の調理場", en: "Kitchen Cooking Station" }, recipe: "recipe_213", recipeLabel: { ja: "きちんとした野菜料理(水 x1 + 穀物全般 x6 + 果実全般 x3)", en: "Solid Vegetable Meal (Water x1 + Any Cereal x6 + Any Fruits x3)" }, facility_multiplier: 1, item_value: 50 },
+        "meals_122": { displayName: { ja: "囲炉裏と調理鍋の仕事場", en: "Sunken Hearth with Cooking Pot Workplace" }, recipe: "recipe_214", recipeLabel: { ja: "きちんとした野菜料理(水 x1 + 穀物全般 x6 + 果実全般 x3)", en: "Solid Vegetable Meal (Water x1 + Any Cereal x6 + Any Fruits x3)" }, facility_multiplier: 1, item_value: 50 },
+        "meals_123": { displayName: { ja: "台所の調理場", en: "Kitchen Cooking Station" }, recipe: "recipe_215", recipeLabel: { ja: "きちんとした野菜料理(水 x1 + 豆全般 x6 + 薬草全般 x3)", en: "Solid Vegetable Meal (Water x1 + Any Beans x6 + Any Herbs x3)" }, facility_multiplier: 1, item_value: 50 },
+        "meals_124": { displayName: { ja: "囲炉裏と調理鍋の仕事場", en: "Sunken Hearth with Cooking Pot Workplace" }, recipe: "recipe_216", recipeLabel: { ja: "きちんとした野菜料理(水 x1 + 豆全般 x6 + 薬草全般 x3)", en: "Solid Vegetable Meal (Water x1 + Any Beans x6 + Any Herbs x3)" }, facility_multiplier: 1, item_value: 50 },
         "meals_125": { displayName: { ja: "囲炉裏と調理鍋の仕事場", en: "Sunken Hearth with Cooking Pot Workplace" }, recipe: "recipe_217", recipeLabel: { ja: "団子", en: "Dango" }, facility_multiplier: 1, item_value: 32 },
         "meals_126": { displayName: { ja: "囲炉裏の仕事場", en: "Sunken Hearth Workplace" }, recipe: "recipe_218", recipeLabel: { ja: "団子", en: "Dango" }, facility_multiplier: 1, item_value: 32 },
         "meals_127": { displayName: { ja: "酒場の調理場", en: "Tavern Cooking Station" }, recipe: "recipe_219", recipeLabel: { ja: "調理した肉", en: "Cooked Meat" }, facility_multiplier: 1, item_value: 11 },
@@ -464,7 +464,7 @@ const MODEL = {
         "meals_144": { displayName: { ja: "調薬台", en: "Herbalist Station" }, recipe: "recipe_236", recipeLabel: { ja: "兵糧丸", en: "Provision Balls (Hyōrōgan)" }, facility_multiplier: 3, item_value: 35 },
         "meals_145": { displayName: { ja: "小さな蜜蜂の巣箱", en: "Small Beehive" }, recipe: "recipe_237", recipeLabel: { ja: "蜂蜜", en: "Honey" }, facility_multiplier: 1, item_value: 4 },
         "meals_146": { displayName: { ja: "大きな蜜蜂の巣箱", en: "Large Beehive" }, recipe: "recipe_238", recipeLabel: { ja: "蜂蜜", en: "Honey" }, facility_multiplier: 1, item_value: 4 },
-        "meals_147": { displayName: { ja: "炊飯樽", en: "Rice Boiling Barrel" }, recipe: "recipe_296", recipeLabel: { ja: "炊いた米(お米8+薪1+水1)", en: "Cooked Rice (Rice x8 + Firewood x1 + Water x1)" }, facility_multiplier: 1, item_value: 24, tools: "stirring_tool" }
+        "meals_147": { displayName: { ja: "炊飯樽", en: "Rice Boiling Barrel" }, recipe: "recipe_296", recipeLabel: { ja: "炊いた米(お米 x8 + 薪 x1 + 水 x1)", en: "Cooked Rice (Rice x8 + Firewood x1 + Water x1)" }, facility_multiplier: 1, item_value: 24, tools: "stirring_tool" }
       }
     },
     "security": {
@@ -552,9 +552,9 @@ const MODEL = {
     "health": {
       facilities: {
         "health_001": { displayName: { ja: "僧院の手水舎", en: "Monastery Chōzuya" }, recipe: "recipe_016", recipeLabel: { ja: "神主", en: "Shrine Priest" }, facility_multiplier: 6, item_value: 1 },
-        "health_002": { displayName: { ja: "酒場", en: "Tavern" }, recipe: "recipe_045", recipeLabel: { ja: "酒場の主人(水2)", en: "Tavern Keeper (Water x2)" }, facility_multiplier: 6, item_value: 1 },
-        "health_003": { displayName: { ja: "酒場", en: "Tavern" }, recipe: "recipe_046", recipeLabel: { ja: "酒場の主人(水1+アルコールを含まない飲料全般1)", en: "Tavern Keeper (Water x1 + Any Non-alcoholic Beverage x1)" }, facility_multiplier: 6, item_value: 1 },
-        "health_004": { displayName: { ja: "酒場", en: "Tavern" }, recipe: "recipe_047", recipeLabel: { ja: "酒場の主人(水1+アルコール飲料全般1)", en: "Tavern Keeper (Water x1 + Any Alcoholic Beverage x1)" }, facility_multiplier: 4, item_value: 1 },
+        "health_002": { displayName: { ja: "酒場", en: "Tavern" }, recipe: "recipe_045", recipeLabel: { ja: "酒場の主人(水 x2)", en: "Tavern Keeper (Water x2)" }, facility_multiplier: 6, item_value: 1 },
+        "health_003": { displayName: { ja: "酒場", en: "Tavern" }, recipe: "recipe_046", recipeLabel: { ja: "酒場の主人(水 x1 + アルコールを含まない飲料全般 x1)", en: "Tavern Keeper (Water x1 + Any Non-alcoholic Beverage x1)" }, facility_multiplier: 6, item_value: 1 },
+        "health_004": { displayName: { ja: "酒場", en: "Tavern" }, recipe: "recipe_047", recipeLabel: { ja: "酒場の主人(水 x1 + アルコール飲料全般 x1)", en: "Tavern Keeper (Water x1 + Any Alcoholic Beverage x1)" }, facility_multiplier: 4, item_value: 1 },
         "health_005": { displayName: { ja: "採集者の仕事場", en: "Forager's Workplace" }, recipe: "recipe_048", recipeLabel: { ja: "菊の花", en: "Yellow Chrysanthemum" }, facility_multiplier: 1, item_value: 1 },
         "health_006": { displayName: { ja: "調薬台", en: "Herbalist Station" }, recipe: "recipe_049", recipeLabel: { ja: "治癒の飲料", en: "Healing Brew" }, facility_multiplier: 1, item_value: 15 },
         "health_007": { displayName: { ja: "調薬台", en: "Herbalist Station" }, recipe: "recipe_050", recipeLabel: { ja: "治癒の包帯", en: "Healing Compress" }, facility_multiplier: 1, item_value: 50 },
@@ -627,8 +627,8 @@ const MODEL = {
         "luxury_027": { displayName: { ja: "仕立て台", en: "Tailor's Workbench" }, recipe: "recipe_264", recipeLabel: { ja: "藁の輪", en: "Straw Ring" }, facility_multiplier: 1, item_value: 38, tools: "any_knife" },
         "luxury_028": { displayName: { ja: "仕立て台", en: "Tailor's Workbench" }, recipe: "recipe_265", recipeLabel: { ja: "裕福な商人の服", en: "Wealthy Merchant Clothes" }, facility_multiplier: 1, item_value: 315, tools: "any_knife" },
         "luxury_029": { displayName: { ja: "仕立て台", en: "Tailor's Workbench" }, recipe: "recipe_266", recipeLabel: { ja: "軽量の侍の服", en: "Light Samurai Clothes" }, facility_multiplier: 1, item_value: 550, tools: "any_knife" },
-        "luxury_030": { displayName: { ja: "仕立て台", en: "Tailor's Workbench" }, recipe: "recipe_267", recipeLabel: { ja: "商人の服(リネン8)", en: "Trader Clothes" }, facility_multiplier: 1, item_value: 55, tools: "any_knife" },
-        "luxury_031": { displayName: { ja: "仕立て台", en: "Tailor's Workbench" }, recipe: "recipe_268", recipeLabel: { ja: "商人の服(リネン20)", en: "Merchant Clothes" }, facility_multiplier: 1, item_value: 250, tools: "any_knife" },
+        "luxury_030": { displayName: { ja: "仕立て台", en: "Tailor's Workbench" }, recipe: "recipe_267", recipeLabel: { ja: "商人の服(リネン x8)", en: "Trader Clothes" }, facility_multiplier: 1, item_value: 55, tools: "any_knife" },
+        "luxury_031": { displayName: { ja: "仕立て台", en: "Tailor's Workbench" }, recipe: "recipe_268", recipeLabel: { ja: "商人の服(リネン x20)", en: "Merchant Clothes" }, facility_multiplier: 1, item_value: 250, tools: "any_knife" },
         "luxury_032": { displayName: { ja: "仕立て台", en: "Tailor's Workbench" }, recipe: "recipe_269", recipeLabel: { ja: "養蜂家の枝細工の面", en: "Beekeeper's Wicker Mask" }, facility_multiplier: 1, item_value: 100, tools: "any_knife" },
         "luxury_033": { displayName: { ja: "仕立て台", en: "Tailor's Workbench" }, recipe: "recipe_270", recipeLabel: { ja: "養蜂家の被り物", en: "Beekeeper Hat" }, facility_multiplier: 1, item_value: 150, tools: "any_knife" },
         "luxury_034": { displayName: { ja: "仕立て台", en: "Tailor's Workbench" }, recipe: "recipe_271", recipeLabel: { ja: "養蜂家の服", en: "Beekeeper's Clothes" }, facility_multiplier: 1, item_value: 260, tools: "any_knife" },
@@ -639,9 +639,9 @@ const MODEL = {
         "luxury_039": { displayName: { ja: "仕立て台", en: "Tailor's Workbench" }, recipe: "recipe_276", recipeLabel: { ja: "海賊の服", en: "Pirate Clothes" }, facility_multiplier: 1, item_value: 100, tools: "any_knife" },
         "luxury_040": { displayName: { ja: "小さな乾燥棚", en: "Small Paper Drying Rack" }, recipe: "recipe_277", recipeLabel: { ja: "紙", en: "Paper" }, facility_multiplier: 4, item_value: 5 },
         "luxury_041": { displayName: { ja: "大きな乾燥棚", en: "Large Paper Drying Rack" }, recipe: "recipe_278", recipeLabel: { ja: "紙", en: "Paper" }, facility_multiplier: 5, item_value: 5 },
-        "luxury_042": { displayName: { ja: "酒場", en: "Tavern" }, recipe: "recipe_045", recipeLabel: { ja: "酒場の主人(水2)", en: "Tavern Keeper (Water x2)" }, facility_multiplier: 6, item_value: 1 },
-        "luxury_043": { displayName: { ja: "酒場", en: "Tavern" }, recipe: "recipe_046", recipeLabel: { ja: "酒場の主人(水1+アルコールを含まない飲料全般1)", en: "Tavern Keeper (Water x1 + Any Non-alcoholic Beverage x1)" }, facility_multiplier: 8, item_value: 1 },
-        "luxury_044": { displayName: { ja: "酒場", en: "Tavern" }, recipe: "recipe_047", recipeLabel: { ja: "酒場の主人(水1+アルコール飲料全般1)", en: "Tavern Keeper (Water x1 + Any Alcoholic Beverage x1)" }, facility_multiplier: 12, item_value: 1 },
+        "luxury_042": { displayName: { ja: "酒場", en: "Tavern" }, recipe: "recipe_045", recipeLabel: { ja: "酒場の主人(水 x2)", en: "Tavern Keeper (Water x2)" }, facility_multiplier: 6, item_value: 1 },
+        "luxury_043": { displayName: { ja: "酒場", en: "Tavern" }, recipe: "recipe_046", recipeLabel: { ja: "酒場の主人(水 x1 + アルコールを含まない飲料全般 x1)", en: "Tavern Keeper (Water x1 + Any Non-alcoholic Beverage x1)" }, facility_multiplier: 8, item_value: 1 },
+        "luxury_044": { displayName: { ja: "酒場", en: "Tavern" }, recipe: "recipe_047", recipeLabel: { ja: "酒場の主人(水 x1 + アルコール飲料全般 x1)", en: "Tavern Keeper (Water x1 + Any Alcoholic Beverage x1)" }, facility_multiplier: 12, item_value: 1 },
         "luxury_045": { displayName: { ja: "鉱夫の仕事場", en: "Miner's Workplace" }, recipe: "recipe_279", recipeLabel: { ja: "氷", en: "Ice" }, facility_multiplier: 1, item_value: 4, tools: "any_pickaxe" },
         "luxury_046": { displayName: { ja: "金敷", en: "Blacksmith Anvil" }, recipe: "recipe_280", recipeLabel: { ja: "香炉", en: "Incense Burner" }, facility_multiplier: 1, item_value: 105, tools: "any_hammer" },
         "luxury_047": { displayName: { ja: "木工作業台", en: "Woodworking Table" }, recipe: "recipe_281", recipeLabel: { ja: "避難民の被り物", en: "Refugee Hat" }, facility_multiplier: 1, item_value: 22 },
@@ -656,10 +656,10 @@ const MODEL = {
         "luxury_056": { displayName: { ja: "木工作業台", en: "Woodworking Table" }, recipe: "recipe_290", recipeLabel: { ja: "小さな行燈", en: "Small Paper Lamp" }, facility_multiplier: 1, item_value: 35 },
         "luxury_057": { displayName: { ja: "木工作業台", en: "Woodworking Table" }, recipe: "recipe_291", recipeLabel: { ja: "円筒提燈", en: "Oval Paper Lamp" }, facility_multiplier: 1, item_value: 40 },
         "luxury_058": { displayName: { ja: "木工作業台", en: "Woodworking Table" }, recipe: "recipe_292", recipeLabel: { ja: "油の行燈", en: "Oil Lamp" }, facility_multiplier: 1, item_value: 70 },
-        "luxury_059": { displayName: { ja: "木工作業台", en: "Woodworking Table" }, recipe: "recipe_293", recipeLabel: { ja: "ろうそく(脂肪1+藁1)", en: "Candle (Fat x1 + Straw x1)" }, facility_multiplier: 4, item_value: 12 },
-        "luxury_060": { displayName: { ja: "木工作業台", en: "Woodworking Table" }, recipe: "recipe_293", recipeLabel: { ja: "ろうそく(蜜蝋1+藁1)", en: "Candle (Beeswax x1 + Straw x1)" }, facility_multiplier: 6, item_value: 12 },
-        "luxury_061": { displayName: { ja: "木工作業台", en: "Woodworking Table" }, recipe: "recipe_294", recipeLabel: { ja: "竹のろうそく(脂肪1+竹1)", en: "Bamboo Candle (Fat x1 + Bamboo x1)" }, facility_multiplier: 1, item_value: 8 },
-        "luxury_062": { displayName: { ja: "木工作業台", en: "Woodworking Table" }, recipe: "recipe_294", recipeLabel: { ja: "竹のろうそく(蜜蝋1+竹1)", en: "Bamboo Candle (Beeswax x1 + Bamboo x1)" }, facility_multiplier: 1, item_value: 8 }
+        "luxury_059": { displayName: { ja: "木工作業台", en: "Woodworking Table" }, recipe: "recipe_293", recipeLabel: { ja: "ろうそく(脂肪 x1 + 藁 x1)", en: "Candle (Fat x1 + Straw x1)" }, facility_multiplier: 4, item_value: 12 },
+        "luxury_060": { displayName: { ja: "木工作業台", en: "Woodworking Table" }, recipe: "recipe_293", recipeLabel: { ja: "ろうそく(蜜蝋 x1 + 藁 x1)", en: "Candle (Beeswax x1 + Straw x1)" }, facility_multiplier: 6, item_value: 12 },
+        "luxury_061": { displayName: { ja: "木工作業台", en: "Woodworking Table" }, recipe: "recipe_294", recipeLabel: { ja: "竹のろうそく(脂肪 x1 + 竹 x1)", en: "Bamboo Candle (Fat x1 + Bamboo x1)" }, facility_multiplier: 1, item_value: 8 },
+        "luxury_062": { displayName: { ja: "木工作業台", en: "Woodworking Table" }, recipe: "recipe_294", recipeLabel: { ja: "竹のろうそく(蜜蝋 x1 + 竹 x1)", en: "Bamboo Candle (Beeswax x1 + Bamboo x1)" }, facility_multiplier: 1, item_value: 8 }
       }
     },
     "maintenance": {
@@ -669,11 +669,11 @@ const MODEL = {
         "maintenance_003": { displayName: { ja: "ヤシの葉の乾燥棚", en: "Palm Leaves Drying Rack" }, recipe: "recipe_085", recipeLabel: { ja: "藁", en: "Straw" }, facility_multiplier: 3, item_value: 1 },
         "maintenance_004": { displayName: { ja: "石工所", en: "Stonemason Station" }, recipe: "recipe_086", recipeLabel: { ja: "彫刻した石", en: "Chiseled Stone" }, facility_multiplier: 1, item_value: 22, tools: "carving_knife" },
         "maintenance_005": { displayName: { ja: "鉱夫の仕事場", en: "Miner's Workplace" }, recipe: "recipe_087", recipeLabel: { ja: "粘土", en: "Clay" }, facility_multiplier: 1, item_value: 10, tools: "any_pickaxe" },
-        "maintenance_006": { displayName: { ja: "大工作業台", en: "Carpentry Station" }, recipe: "recipe_088", recipeLabel: { ja: "板(針葉樹)", en: "Plank (conifer)" }, facility_multiplier: 6, item_value: 4, tools: "any_adze" },
-        "maintenance_007": { displayName: { ja: "大工作業台", en: "Carpentry Station" }, recipe: "recipe_089", recipeLabel: { ja: "板(落葉樹)", en: "Plank (deciduous)" }, facility_multiplier: 6, item_value: 4, tools: "any_adze" },
-        "maintenance_008": { displayName: { ja: "大工作業台", en: "Carpentry Station" }, recipe: "recipe_090", recipeLabel: { ja: "板(上質な針葉樹)", en: "Plank (premium conifer)" }, facility_multiplier: 6, item_value: 6, tools: "any_adze" },
-        "maintenance_009": { displayName: { ja: "大工作業台", en: "Carpentry Station" }, recipe: "recipe_091", recipeLabel: { ja: "板(上質な落葉樹)", en: "Plank (premium deciduous)" }, facility_multiplier: 6, item_value: 6, tools: "any_adze" },
-        "maintenance_010": { displayName: { ja: "大工作業台", en: "Carpentry Station" }, recipe: "recipe_092", recipeLabel: { ja: "板(果樹)", en: "Plank (fruit)" }, facility_multiplier: 6, item_value: 9, tools: "any_adze" }
+        "maintenance_006": { displayName: { ja: "大工作業台", en: "Carpentry Station" }, recipe: "recipe_088", recipeLabel: { ja: "板(針葉樹の丸太全般 x1)", en: "Plank (Any Conifer Log x1)" }, facility_multiplier: 6, item_value: 4, tools: "any_adze" },
+        "maintenance_007": { displayName: { ja: "大工作業台", en: "Carpentry Station" }, recipe: "recipe_089", recipeLabel: { ja: "板(落葉樹の丸太全般 x1)", en: "Plank (Any Deciduous Log x1)" }, facility_multiplier: 6, item_value: 4, tools: "any_adze" },
+        "maintenance_008": { displayName: { ja: "大工作業台", en: "Carpentry Station" }, recipe: "recipe_090", recipeLabel: { ja: "板(上質な針葉樹の丸太全般 x1)", en: "Plank (Any Premium Conifer Log x1)" }, facility_multiplier: 6, item_value: 6, tools: "any_adze" },
+        "maintenance_009": { displayName: { ja: "大工作業台", en: "Carpentry Station" }, recipe: "recipe_091", recipeLabel: { ja: "板(上質な落葉樹の丸太全般 x1)", en: "Plank (Any Premium Deciduous Log x1)" }, facility_multiplier: 6, item_value: 6, tools: "any_adze" },
+        "maintenance_010": { displayName: { ja: "大工作業台", en: "Carpentry Station" }, recipe: "recipe_092", recipeLabel: { ja: "板(果樹の丸太全般 x1)", en: "Plank (Any Fruit Log x1)" }, facility_multiplier: 6, item_value: 9, tools: "any_adze" }
       }
     }
   }
