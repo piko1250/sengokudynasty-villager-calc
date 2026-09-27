@@ -312,6 +312,7 @@ const MODEL = {
     "recipe_292": { base_cost0_num: 5, base_cost0_den: 2 }, // 油の行燈_木工作業台
     "recipe_293": { base_cost0_num: 5, base_cost0_den: 1 }, // ろうそく_木工作業台
     "recipe_294": { base_cost0_num: 5, base_cost0_den: 1 }, // 竹のろうそく_木工作業台
+    "recipe_295": { base_cost0_num: 5, base_cost0_den: 1 }, // 枝_大工作業台
   },
   categories: {
     "meals": {
@@ -487,7 +488,8 @@ const MODEL = {
         "heating_007": { displayName: { ja: "採集者の仕事場", en: "Forager's Workplace" }, recipe: "recipe_011", recipeLabel: { ja: "梶の樹皮", en: "Paper Bark" }, facility_multiplier: 1, item_value: 1 },
         "heating_008": { displayName: { ja: "炭窯", en: "Charcoal Kiln" }, recipe: "recipe_014", recipeLabel: { ja: "木炭", en: "Charcoal" }, facility_multiplier: 2, item_value: 12 },
         "heating_009": { displayName: { ja: "大工作業台", en: "Carpentry Station" }, recipe: "recipe_012", recipeLabel: { ja: "薪", en: "Firewood" }, facility_multiplier: 8, item_value: 5, tools: "any_axe" },
-        "heating_010": { displayName: { ja: "仕立て台", en: "Tailor's Workbench" }, recipe: "recipe_013", recipeLabel: { ja: "蓑", en: "Straw Cloak" }, facility_multiplier: 1, item_value: 140 }
+        "heating_010": { displayName: { ja: "仕立て台", en: "Tailor's Workbench" }, recipe: "recipe_013", recipeLabel: { ja: "蓑", en: "Straw Cloak" }, facility_multiplier: 1, item_value: 140 },
+        "heating_011": { displayName: { ja: "大工作業台", en: "Carpentry Station" }, recipe: "recipe_295", recipeLabel: { ja: "枝", en: "Stick" }, facility_multiplier: 20, item_value: 1, tools: "any_axe" }
       }
     },
     "spiritual": {
